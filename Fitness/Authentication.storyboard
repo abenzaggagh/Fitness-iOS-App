@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ru7-Fg-YS0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login-->
+        <scene sceneID="3bA-XQ-qKN">
+            <objects>
+                <viewController id="ru7-Fg-YS0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wxK-xM-Qu7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBZ-Jc-uHr">
+                                <rect key="frame" x="30" y="255" width="354" height="59"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HBZ-Jc-uHr" secondAttribute="height" multiplier="6:1" id="tZ2-fL-zEa"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Lose Weight"/>
+                                <connections>
+                                    <action selector="loseWeight:" destination="MlC-bf-jHB" eventType="touchUpInside" id="AOb-07-92g"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGF-gi-9Mi">
+                                <rect key="frame" x="20" y="194" width="374" height="21"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="What's your goal?">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="18" name="Oswald-Regular_Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-nO-tRH">
+                                <rect key="frame" x="30" y="430" width="354" height="59"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Dv9-nO-tRH" secondAttribute="height" multiplier="6:1" id="Nz3-Iw-mhn"/>
+                                </constraints>
+                                <state key="normal" title="Get Fitter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loseWeight:" destination="MlC-bf-jHB" eventType="touchUpInside" id="zy6-Ja-spA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6yj-Pe-E4D">
+                                <rect key="frame" x="30" y="341" width="354" height="59"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6yj-Pe-E4D" secondAttribute="height" multiplier="6:1" id="mXv-GU-8Yk"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Get Fitter"/>
+                                <connections>
+                                    <action selector="loseWeight:" destination="MlC-bf-jHB" eventType="touchUpInside" id="Yci-Zf-qQm"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gui-ul-IDN">
+                                <rect key="frame" x="142" y="773" width="131" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hGF-gi-9Mi" firstAttribute="top" secondItem="UJV-lk-pQJ" secondAttribute="top" priority="750" constant="150" id="5yg-LR-SqC"/>
+                            <constraint firstItem="Dv9-nO-tRH" firstAttribute="leading" secondItem="UJV-lk-pQJ" secondAttribute="leading" constant="30" id="IWi-Xq-ha7"/>
+                            <constraint firstItem="Dv9-nO-tRH" firstAttribute="top" secondItem="6yj-Pe-E4D" secondAttribute="bottom" constant="30" id="MmU-ze-izc"/>
+                            <constraint firstItem="UJV-lk-pQJ" firstAttribute="trailing" secondItem="HBZ-Jc-uHr" secondAttribute="trailing" constant="30" id="Tyn-3b-FP1"/>
+                            <constraint firstItem="hGF-gi-9Mi" firstAttribute="leading" secondItem="UJV-lk-pQJ" secondAttribute="leading" constant="20" id="Y5T-b6-sop"/>
+                            <constraint firstItem="UJV-lk-pQJ" firstAttribute="trailing" secondItem="Dv9-nO-tRH" secondAttribute="trailing" constant="30" id="aCf-0h-SGI"/>
+                            <constraint firstItem="UJV-lk-pQJ" firstAttribute="trailing" secondItem="6yj-Pe-E4D" secondAttribute="trailing" constant="30" id="dXv-Y3-QVD"/>
+                            <constraint firstItem="HBZ-Jc-uHr" firstAttribute="leading" secondItem="UJV-lk-pQJ" secondAttribute="leading" constant="30" id="fx1-MC-GFN"/>
+                            <constraint firstItem="6yj-Pe-E4D" firstAttribute="leading" secondItem="UJV-lk-pQJ" secondAttribute="leading" constant="30" id="hCg-hM-CEt"/>
+                            <constraint firstItem="HBZ-Jc-uHr" firstAttribute="top" secondItem="hGF-gi-9Mi" secondAttribute="bottom" constant="40" id="mcx-WB-HE9"/>
+                            <constraint firstItem="UJV-lk-pQJ" firstAttribute="trailing" secondItem="hGF-gi-9Mi" secondAttribute="trailing" constant="20" id="rQB-9G-N2R"/>
+                            <constraint firstItem="6yj-Pe-E4D" firstAttribute="top" secondItem="HBZ-Jc-uHr" secondAttribute="bottom" constant="27" id="zf3-rc-cvN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UJV-lk-pQJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Login" id="wZj-IC-Rau"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVH-I9-Th7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="MlC-bf-jHB" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-49.275362318840585" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+</document>

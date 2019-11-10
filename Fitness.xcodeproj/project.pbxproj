@@ -14,6 +14,10 @@
 		C564E86D2376EAEA00190832 /* Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C564E86B2376EAEA00190832 /* Fitness.xcdatamodeld */; };
 		C564E86F2376EAED00190832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C564E86E2376EAED00190832 /* Assets.xcassets */; };
 		C564E8722376EAED00190832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C564E8702376EAED00190832 /* LaunchScreen.storyboard */; };
+		C564E87A2376EB0800190832 /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C564E8792376EB0800190832 /* Summary.storyboard */; };
+		C564E87D2376F0B800190832 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564E87C2376F0B800190832 /* AuthenticationViewController.swift */; };
+		C564E87F2376F0DD00190832 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C564E87E2376F0DD00190832 /* Authentication.storyboard */; };
+		C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		C564E86E2376EAED00190832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C564E8712376EAED00190832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C564E8732376EAED00190832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C564E8792376EB0800190832 /* Summary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
+		C564E87C2376F0B800190832 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		C564E87E2376F0DD00190832 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,44 @@
 		C564E8612376EAEA00190832 /* Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				C564E87B2376F09800190832 /* Authentication */,
 				C564E8622376EAEA00190832 /* AppDelegate.swift */,
 				C564E8642376EAEA00190832 /* SceneDelegate.swift */,
 				C564E8662376EAEA00190832 /* ViewController.swift */,
+				C564E87E2376F0DD00190832 /* Authentication.storyboard */,
 				C564E8682376EAEA00190832 /* Main.storyboard */,
-				C564E86E2376EAED00190832 /* Assets.xcassets */,
 				C564E8702376EAED00190832 /* LaunchScreen.storyboard */,
 				C564E8732376EAED00190832 /* Info.plist */,
 				C564E86B2376EAEA00190832 /* Fitness.xcdatamodeld */,
+				C5C3A7D72378584500AA773D /* Summary */,
+				C5C3A7D62378583400AA773D /* Meals */,
+				C564E86E2376EAED00190832 /* Assets.xcassets */,
 			);
 			path = Fitness;
+			sourceTree = "<group>";
+		};
+		C564E87B2376F09800190832 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C564E87C2376F0B800190832 /* AuthenticationViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C5C3A7D62378583400AA773D /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Meals;
+			sourceTree = "<group>";
+		};
+		C5C3A7D72378584500AA773D /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				C564E8792376EB0800190832 /* Summary.storyboard */,
+				C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +167,8 @@
 				C564E8722376EAED00190832 /* LaunchScreen.storyboard in Resources */,
 				C564E86F2376EAED00190832 /* Assets.xcassets in Resources */,
 				C564E86A2376EAEA00190832 /* Main.storyboard in Resources */,
+				C564E87A2376EB0800190832 /* Summary.storyboard in Resources */,
+				C564E87F2376F0DD00190832 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +181,10 @@
 			files = (
 				C564E86D2376EAEA00190832 /* Fitness.xcdatamodeld in Sources */,
 				C564E8672376EAEA00190832 /* ViewController.swift in Sources */,
+				C564E87D2376F0B800190832 /* AuthenticationViewController.swift in Sources */,
 				C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */,
 				C564E8652376EAEA00190832 /* SceneDelegate.swift in Sources */,
+				C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H7DB9S65T;
 				INFOPLIST_FILE = Fitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ensias.Fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,6 +350,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8H7DB9S65T;
 				INFOPLIST_FILE = Fitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ensias.Fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
