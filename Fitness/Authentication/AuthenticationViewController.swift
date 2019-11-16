@@ -13,3 +13,14 @@ class GoalViewController: UIViewController {
     }
     
 }
+
+
+class AuthentificationViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
+    
+}

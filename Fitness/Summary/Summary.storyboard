@@ -3,50 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Summary-->
-        <scene sceneID="2On-Y7-kwE">
-            <objects>
-                <tableViewController id="glb-db-P2v" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Znd-16-ynR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W9F-BK-Ytu">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W9F-BK-Ytu" id="hfD-Vx-8sd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="glb-db-P2v" id="ZCM-8J-GiM"/>
-                            <outlet property="delegate" destination="glb-db-P2v" id="Kbk-zX-DQt"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Summary" id="WZK-Jx-cgJ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="tAm-Cq-Lka">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hZZ-po-IHY">
-                                <rect key="frame" x="302" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Profile"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WLp-8v-Jqc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2414" y="1"/>
-        </scene>
-        <!--Summary-->
         <scene sceneID="lba-ok-jBf">
             <objects>
-                <navigationController id="qfb-gn-McG" sceneMemberID="viewController">
+                <navigationController id="qfb-gn-McG" customClass="SummaryNavigationController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Summary" image="Summary" id="Re6-X1-oDN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nFt-hp-EO5">
@@ -54,12 +18,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="glb-db-P2v" kind="relationship" relationship="rootViewController" id="3YP-Sq-Pmu"/>
+                        <segue destination="RVZ-Ev-3qR" kind="relationship" relationship="rootViewController" id="K69-5a-RqY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evU-GT-hSr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3331" y="1"/>
+            <point key="canvasLocation" x="-3130" y="0.0"/>
+        </scene>
+        <!--Summary-->
+        <scene sceneID="TqQ-Z8-ycW">
+            <objects>
+                <viewController id="RVZ-Ev-3qR" customClass="SummaryViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uIa-Y4-IJq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="svF-pC-f1h"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Summary" leftItemsSupplementBackButton="YES" id="eaw-it-Mrc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdq-TG-3Rb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2204" y="10"/>
         </scene>
     </scenes>
     <resources>

@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Habits" representedClassName="Habits" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Meals" representedClassName="Meals" syncable="YES" codeGenerationType="class"/>
+    <entity name="Run" representedClassName="Run" parentEntity="Workout" syncable="YES" codeGenerationType="class"/>
+    <entity name="Sleep" representedClassName="Sleep" syncable="YES" codeGenerationType="class"/>
+    <entity name="Walk" representedClassName="Walk" parentEntity="Workout" syncable="YES" codeGenerationType="class"/>
+    <entity name="Workout" representedClassName="Workout" isAbstract="YES" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="Habits" positionX="72.234375" positionY="23.1484375" width="128" height="58"/>
+        <element name="Workout" positionX="-176.6640625" positionY="171.796875" width="128" height="43"/>
+        <element name="Walk" positionX="-98.96484375" positionY="284.78515625" width="128" height="43"/>
+        <element name="Run" positionX="-194.4296875" positionY="282.58203125" width="128" height="43"/>
+        <element name="Sleep" positionX="-159.16015625" positionY="-42.37890625" width="128" height="43"/>
+        <element name="Meals" positionX="-117" positionY="72" width="128" height="43"/>
+    </elements>
 </model>

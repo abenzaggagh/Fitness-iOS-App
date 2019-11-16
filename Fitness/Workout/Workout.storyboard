@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHb-h0-4Lt">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Workout-->
+        <scene sceneID="gn3-Si-rLR">
+            <objects>
+                <viewController storyboardIdentifier="Workout" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4R-8F-ozH" customClass="WorkoutViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lW1-QU-gik">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyC-c6-Lwh">
+                                <rect key="frame" x="0.0" y="91" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="JN9-MG-OoK">
+                                        <segmentedControl key="customView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DHM-8g-Zyy">
+                                            <rect key="frame" x="16" y="6" width="288" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Walk"/>
+                                                <segment title="Run"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="changeWorkoutSegmentedControl:" destination="M4R-8F-ozH" eventType="valueChanged" id="xrs-lq-vdY"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfO-mX-I3F">
+                                <rect key="frame" x="16" y="141" width="288" height="368"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiX-Ls-45F">
+                                <rect key="frame" x="100" y="446" width="120" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ASK-7n-Bks"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startRunWorkout:" destination="M4R-8F-ozH" eventType="touchUpInside" id="zNY-J8-fBl"/>
+                                    <segue destination="v7X-RD-kcO" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="cCn-JG-Oby"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YfO-mX-I3F" firstAttribute="bottom" secondItem="Jch-yK-fab" secondAttribute="bottom" constant="-10" id="4WY-8a-RGx"/>
+                            <constraint firstItem="YfO-mX-I3F" firstAttribute="leading" secondItem="iyC-c6-Lwh" secondAttribute="leading" constant="16" id="52d-Fr-RUg"/>
+                            <constraint firstItem="iyC-c6-Lwh" firstAttribute="top" secondItem="Jch-yK-fab" secondAttribute="top" id="5QT-L5-QQx"/>
+                            <constraint firstItem="YfO-mX-I3F" firstAttribute="trailing" secondItem="iyC-c6-Lwh" secondAttribute="trailing" constant="-16" id="CTw-Iu-gJg"/>
+                            <constraint firstItem="PiX-Ls-45F" firstAttribute="leading" secondItem="Jch-yK-fab" secondAttribute="leading" constant="100" id="F76-x3-yHb"/>
+                            <constraint firstItem="iyC-c6-Lwh" firstAttribute="leading" secondItem="Jch-yK-fab" secondAttribute="leading" id="WNM-it-1w2"/>
+                            <constraint firstItem="Jch-yK-fab" firstAttribute="bottom" secondItem="PiX-Ls-45F" secondAttribute="bottom" constant="33" id="Z08-3q-vWz"/>
+                            <constraint firstItem="PiX-Ls-45F" firstAttribute="centerX" secondItem="YfO-mX-I3F" secondAttribute="centerX" id="ZoP-8c-nsC"/>
+                            <constraint firstItem="iyC-c6-Lwh" firstAttribute="centerX" secondItem="lW1-QU-gik" secondAttribute="centerX" id="aPf-jP-Mdl"/>
+                            <constraint firstItem="YfO-mX-I3F" firstAttribute="top" secondItem="iyC-c6-Lwh" secondAttribute="bottom" constant="6" id="ecH-z4-lgA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jch-yK-fab"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Workout" leftItemsSupplementBackButton="YES" id="01O-Yw-Nqu">
+                        <barButtonItem key="leftBarButtonItem" title="History" id="f5h-29-GL0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="PEn-Ye-hsS">
+                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" name="White_DarkMode"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="History">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="vpp-Kv-hIX" kind="show" id="jpx-0h-H0J"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" name="DMWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="startWorkoutButton" destination="PiX-Ls-45F" id="pVE-P4-RCb"/>
+                        <outlet property="workoutRunMap" destination="YfO-mX-I3F" id="KQ6-rb-JdR"/>
+                        <outlet property="workoutSegmentedControl" destination="DHM-8g-Zyy" id="SVB-UZ-mL1"/>
+                        <outlet property="workoutToolbar" destination="iyC-c6-Lwh" id="P5S-5G-M1S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vnm-De-FPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4368.75" y="884.15492957746483"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="yFv-Ll-FqR">
+            <objects>
+                <viewController id="vpp-Kv-hIX" customClass="HistoryViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Gy-oI-aum">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SaO-ki-gdV"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="History" largeTitleDisplayMode="always" id="BdH-rb-oCt">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" name="DMWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navigationBackButton" destination="BdH-rb-oCt" id="wck-PF-fnX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kts-lR-nAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5689" y="1472"/>
+        </scene>
+        <!--Run View Controller-->
+        <scene sceneID="Fg4-bG-JQU">
+            <objects>
+                <viewController id="v7X-RD-kcO" customClass="RunViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JY7-Ul-vsE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUz-9k-tll">
+                                <rect key="frame" x="16" y="498" width="288" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="End"/>
+                                <connections>
+                                    <action selector="endRunWorkoutButton:" destination="v7X-RD-kcO" eventType="touchUpInside" id="F8k-sl-eeE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Uad-JP-xPc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oLq-eg-ptS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3lr-pg-NNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5520" y="451.05633802816902"/>
+        </scene>
+        <!--Workout-->
+        <scene sceneID="T7V-4R-xnK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gHb-h0-4Lt" customClass="WorkoutNavigationController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Workout" image="Workout" id="uaw-CC-0nU"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="OHj-uK-udq" customClass="WorkoutNavigationBar" customModule="Fitness" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M4R-8F-ozH" kind="relationship" relationship="rootViewController" id="MuH-IO-V85"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Cl-90-4PX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3479.7101449275365" y="885.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Workout" width="30" height="30"/>
+        <namedColor name="DMWhite">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="White_DarkMode">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

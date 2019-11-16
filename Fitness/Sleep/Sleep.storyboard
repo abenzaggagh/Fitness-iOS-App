@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tlu-eK-efZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sleep-->
+        <scene sceneID="Veh-Gq-A2i">
+            <objects>
+                <viewController id="UvE-XM-2ZK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y9k-fI-bt1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bg7-uT-FE7"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sleep" leftItemsSupplementBackButton="YES" id="CLL-zr-KEe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WmB-Gu-cBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2637.68115942029" y="976.33928571428567"/>
+        </scene>
+        <!--Sleep-->
+        <scene sceneID="ADd-To-hiu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tlu-eK-efZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sleep" image="Sleep" id="jmz-DJ-hHP"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Cfi-Xd-ztu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UvE-XM-2ZK" kind="relationship" relationship="rootViewController" id="Z4b-tb-9M5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1O5-IM-yUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727.536231884058" y="976.33928571428567"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Sleep" width="30" height="30"/>
+    </resources>
+</document>

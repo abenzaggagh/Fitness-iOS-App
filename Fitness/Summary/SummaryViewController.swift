@@ -8,11 +8,23 @@
 
 import UIKit
 
+class SummaryNavigationController: UINavigationController {
+    
+    
+    
+}
+
 class SummaryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        
+        let search = UISearchController(searchResultsController: nil /* TODO: Search Results Controller */)
+        
+        search.searchResultsUpdater = self as? UISearchResultsUpdating
+        self.navigationItem.searchController = search
     }
     
 
@@ -26,4 +38,11 @@ class SummaryViewController: UIViewController {
     }
     */
 
+}
+
+
+class SummaryViewTabBarItem: UITabBarItem {
+    
+    
+    
 }
