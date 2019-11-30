@@ -71,11 +71,11 @@
                         <viewLayoutGuide key="safeArea" id="Jch-yK-fab"/>
                     </view>
                     <navigationItem key="navigationItem" title="Workout" leftItemsSupplementBackButton="YES" id="01O-Yw-Nqu">
-                        <barButtonItem key="leftBarButtonItem" title="History" id="f5h-29-GL0">
+                        <barButtonItem key="leftBarButtonItem" title="History" style="done" id="f5h-29-GL0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="PEn-Ye-hsS">
                                 <rect key="frame" x="16" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" name="White_DarkMode"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="History">
@@ -90,7 +90,7 @@
                                     <segue destination="vpp-Kv-hIX" kind="show" id="jpx-0h-H0J"/>
                                 </connections>
                             </button>
-                            <color key="tintColor" name="DMWhite"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lr-pg-NNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5520" y="451.05633802816902"/>
+            <point key="canvasLocation" x="5304" y="210"/>
         </scene>
         <!--Workout-->
         <scene sceneID="T7V-4R-xnK">
@@ -180,10 +180,7 @@
     <resources>
         <image name="Workout" width="30" height="30"/>
         <namedColor name="DMWhite">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White_DarkMode">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

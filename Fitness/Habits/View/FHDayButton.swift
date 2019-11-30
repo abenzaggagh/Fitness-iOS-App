@@ -11,8 +11,8 @@ import UIKit
 @IBDesignable
 class FHDayButton: UIButton {
 
-    @IBInspectable var habitDayIsOn: Bool = true
-    @IBInspectable var habitDayTitle: String = "Mon"
+    @IBInspectable var habitDaySelected: Bool = true
+    // @IBInspectable var habitDayTitle: String = "Mon"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,7 +24,7 @@ class FHDayButton: UIButton {
         initButton()
     }
     
-    func initButton() {
+    private func initButton() {
 
         clipsToBounds = true
         
@@ -38,12 +38,12 @@ class FHDayButton: UIButton {
         addTarget(self, action: #selector(FHDayButton.buttonPressed), for: .touchUpInside)
     }
     
-    @objc func buttonPressed() {
-        activateButton(bool: !habitDayIsOn)
+    @objc private func buttonPressed() {
+        activateButton(bool: !habitDaySelected)
     }
     
-    func activateButton(bool: Bool) {
-        habitDayIsOn = bool
+    private func activateButton(bool: Bool) {
+        habitDaySelected = bool
         
         let color = bool ? Colors.lightGray : .clear
         let titleColor = bool ? Colors.black : Colors.darkGray
@@ -52,6 +52,10 @@ class FHDayButton: UIButton {
         
         setTitleColor(titleColor, for: .normal)
         
+    }
+    
+    func isActive() -> Bool {
+        return self.habitDaySelected
     }
 
 }

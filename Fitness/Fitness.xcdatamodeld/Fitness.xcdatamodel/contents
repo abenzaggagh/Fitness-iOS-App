@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Habits" representedClassName="Habits" syncable="YES" codeGenerationType="class">
-        <attribute name="name" optional="YES" attributeType="String"/>
+    <entity name="Habit" representedClassName="Habit" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Meals" representedClassName="Meals" syncable="YES" codeGenerationType="class"/>
     <entity name="Run" representedClassName="Run" parentEntity="Workout" syncable="YES" codeGenerationType="class"/>
@@ -9,11 +11,11 @@
     <entity name="Walk" representedClassName="Walk" parentEntity="Workout" syncable="YES" codeGenerationType="class"/>
     <entity name="Workout" representedClassName="Workout" isAbstract="YES" syncable="YES" codeGenerationType="class"/>
     <elements>
-        <element name="Habits" positionX="72.234375" positionY="23.1484375" width="128" height="58"/>
-        <element name="Workout" positionX="-176.6640625" positionY="171.796875" width="128" height="43"/>
-        <element name="Walk" positionX="-98.96484375" positionY="284.78515625" width="128" height="43"/>
-        <element name="Run" positionX="-194.4296875" positionY="282.58203125" width="128" height="43"/>
-        <element name="Sleep" positionX="-159.16015625" positionY="-42.37890625" width="128" height="43"/>
-        <element name="Meals" positionX="-117" positionY="72" width="128" height="43"/>
+        <element name="Meals" positionX="1341.69140625" positionY="-21103.45703125" width="128" height="43"/>
+        <element name="Run" positionX="1384.48046875" positionY="-20969.8046875" width="128" height="43"/>
+        <element name="Sleep" positionX="1178.93359375" positionY="-21105.83203125" width="128" height="43"/>
+        <element name="Walk" positionX="1570.41015625" positionY="-20969.91796875" width="128" height="43"/>
+        <element name="Workout" positionX="1511.1328125" positionY="-21102.1015625" width="128" height="43"/>
+        <element name="Habit" positionX="1271.65234375" positionY="-20682.796875" width="128" height="88"/>
     </elements>
 </model>

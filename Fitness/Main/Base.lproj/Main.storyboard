@@ -20,7 +20,7 @@
         <!--Main Tab Bar-->
         <scene sceneID="j9g-Qj-f2U">
             <objects>
-                <tabBarController storyboardIdentifier="Main" title="Main Tab Bar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zwe-9h-4E8" customClass="MainTabBarController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Main" title="Main Tab Bar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zwe-9h-4E8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bFy-L9-zRw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -29,7 +29,7 @@
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                                <color key="value" name="DMWhite"/>
+                                <color key="value" name="DMBlack"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,7 +95,7 @@
         <image name="Sleep" width="30" height="30"/>
         <image name="Summary" width="30" height="30"/>
         <image name="Workout" width="30" height="30"/>
-        <namedColor name="DMWhite">
+        <namedColor name="DMBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

@@ -1,14 +1,15 @@
 //
-//  ViewController.swift
+//  RunViewController.swift
 //  Fitness
 //
-//  Created by Amine BEN ZAGGAGH on 11/15/19.
+//  Created by Amine BEN ZAGGAGH on 11/14/19.
 //  Copyright © 2019 Amine BEN ZAGGAGH. All rights reserved.
 //
 
 import UIKit
+import CoreMotion
 
-class HabitsNavigationController: UINavigationController {
+class RunViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +17,7 @@ class HabitsNavigationController: UINavigationController {
         // Do any additional setup after loading the view.
     }
     
+    var pedomer = CMPedometer()
 
     /*
     // MARK: - Navigation
@@ -26,5 +28,13 @@ class HabitsNavigationController: UINavigationController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func endRunWorkoutButton(_ sender: UIButton) {
+        // _ard = UIStoryboard(name: "Workout", bundle: nil)
+        // let workoutViewController = workoutStoryboard.instantiateViewController(withIdentifier: "Workout")
+        // performSegue(withIdentifier: "End Workout", sender: nil)
+        // workoutStoryboardpresent()
+        self.dismiss(animated: false)
+    }
+    
 }

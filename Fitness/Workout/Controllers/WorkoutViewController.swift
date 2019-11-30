@@ -47,7 +47,6 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
         workoutToolbar.clipsToBounds = true
         startWorkoutButton.layer.cornerRadius = 8
         navigationController?.navigationBar.prefersLargeTitles = true
-        // navigationController?.navigationBar.
     }
     
     private func setupMapUI() {
@@ -59,7 +58,17 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
         workoutRunMap.layer.cornerRadius = 8
     }
     
+    private func setupWeatherUI() {
+        /*
+        let API = "14e06edc87f19f9be27feae2263a3ada"
+        var latitude = locationManager.location?.coordinate.latitude
+        var longitude = locationManager.location?.coordinate.longitude
+        let url = URL(string: "api.openweathermap.org/data/2.5/weather?lat=\(latitude?.description)&lon=\(longitude?.description)")!
+         */
+    }
+    
     private func setupLocationManager() {
+        
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.distanceFilter = kCLDistanceFilterNone
