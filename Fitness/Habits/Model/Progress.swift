@@ -9,24 +9,101 @@
 import Foundation
 
 
-protocol Trackable {
+//protocol Trackable {
+//
+//
+//
+//}
+//
+//protocol Progressable {
+//
+//
+//}
+
+protocol HabitProgress: Codable {
+    
+    var progressDate: Date { get }
+    
+    init(on date: Date)
     
     func markDone(on date: Date)
     func markCompleted(on date: Date)
     
 }
 
-class HabitProgress: Trackable, Codable {
+class DailyProgress: HabitProgress {
     
-    var progressDate: Date = Date()
     
+    required init(on date: Date) {
+        progressDate = date
+    }
+    
+    
+    var progressDate: Date
+    
+    var goalCompleted: Int?
+//    var goalLeft: Int? {
+//        get {
+//            return
+//        }
+//    }
     
     func markDone(on date: Date) {
-        
+         print()
+    }
+
+    func markCompleted(on date: Date) {
+        print()
+    }
+    
+}
+
+class WeeklyProgress: HabitProgress {
+    
+    var progressDate: Date
+    
+    required init(on date: Date) {
+        progressDate = date
+    }
+    
+    func markDone(on date: Date) {
     }
     
     func markCompleted(on date: Date) {
-        
+    }
+    
+    
+}
+
+class MonthlyProgress: HabitProgress {
+    
+    var progressDate: Date
+    
+    required init(on date: Date) {
+        progressDate = date
+    }
+    
+    func markDone(on date: Date) {
+    }
+    
+    func markCompleted(on date: Date) {
+    }
+    
+    
+}
+
+class YearlyProgress: HabitProgress {
+    
+    var progressDate: Date
+    
+    required init(on date: Date) {
+        progressDate = date
+    }
+    
+    func markDone(on date: Date) {
+    }
+    
+    func markCompleted(on date: Date) {
     }
     
 }

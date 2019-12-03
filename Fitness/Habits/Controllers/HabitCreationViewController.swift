@@ -8,9 +8,14 @@
 
 import UIKit
 
+// HabitCreationViewController
+// View Controller for New Habit Creation
+// Modal View Controller
 class HabitCreationViewController: UIViewController {
     
-    // private lazy var habit = Habit(isNew: true)
+    private lazy var habit = Habit(isNew: true)
+    
+    var habitdelegate: HabitDelegate!
     
     @IBOutlet weak var newHabitScrollView: UIScrollView!
     @IBOutlet weak var newHabitContentView: UIView!
@@ -26,7 +31,6 @@ class HabitCreationViewController: UIViewController {
     @IBOutlet weak var goalPeriodSegementedControl: UISegmentedControl!
     @IBOutlet weak var goalFrequencyTextField: UITextField!
     @IBOutlet weak var goalFrequencyStepper: UIStepper!
-    @IBOutlet weak var habitNoteTextView: UITextView!
     
     @IBOutlet var goalTrackingDaysButtons: [FHDayButton]!
     
@@ -37,7 +41,6 @@ class HabitCreationViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        
 
     }
     
@@ -59,43 +62,48 @@ class HabitCreationViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true)
         
     }
     
     @IBAction func save(_ sender: Any) {
-        /*
-        habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)
         
+        habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)
+
         if habitNameTextField.text != nil, !habitNameTextField.text!.isEmpty {
             habit.name = habitNameTextField.text
         } else {
             habitNameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 2.0, revert: true)
         }
-        
+
         let goalPeriod = GoalPeriod(rawValue: goalPeriodSegementedControl!.selectedSegmentIndex) ?? nil
-        
+
         let goalFrequency = Int(goalFrequencyStepper.value)
         var trackingDays = DailyDays()
-        
+
         var goal = Goal(period: goalPeriod!, frequency: goalFrequency)
-        
+
         if goalPeriod == .daily {
             for goalTrackingDaysButton in goalTrackingDaysButtons {
                 trackingDays.on(day: goalTrackingDaysButton.currentTitle!, is: goalTrackingDaysButton.isActive())
             }
             goal.setTracking(days: trackingDays)
         }
+
+        habit.createdAt = Date()
         
-        habit.createdAt = Date() */
+        habitdelegate.addHabit(habit: habit)
         
-        // let data: Data? = try? JSONEncoder().encode(habit)
-        
-        self.dismiss(animated: true)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
+     
     private func setupUI() {
     
         newHabitScrollView.addSubview(newHabitContentView)
@@ -113,14 +121,12 @@ class HabitCreationViewController: UIViewController {
         goalFrequencyStepper.minimumValue = 1
         goalFrequencyStepper.maximumValue = 24
         
-        habitNoteTextView.textColor = .black
-        habitNoteTextView.layer.cornerRadius = 12
-        habitNoteTextView.backgroundColor = UIColor.init(displayP3Red: 253.0, green: 253.0, blue: 253.0, alpha: 1)
-        habitNoteTextView.text = "Type your thoughts here..."
-        
     }
     
 }
+
+
+
 
 extension UITextField {
     

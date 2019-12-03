@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DayError: Error {
+enum HabitError: Error {
     
 }
 
@@ -17,15 +17,6 @@ enum Type: Int, Codable {
     case build = 0, quit
     
     var description: String {
-        switch self {
-        case .build:
-            return "Build"
-        case .quit:
-            return "Quit"
-        }
-    }
-    
-    func habitType() -> String {
         switch self {
         case .build:
             return "Build"
@@ -112,13 +103,24 @@ public class Habit: Codable {
     var type: Type?
     var goal: Goal?
     
-    var reminder = [HabitReminder]()
+    var todayProgress: HabitProgress?
+    
     var progress = [HabitProgress]()
+    var reminder = [HabitReminder]()
     
     var createdAt: Date?
     
     public var note: String?
     
+    
+    /// Codable Methods
+    required public init(from decoder: Decoder) {
+    
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        
+    }
     
     init(name: String, type: Type, goal: Goal, note: String) {
         self.name = name
@@ -138,7 +140,11 @@ public class Habit: Codable {
         // let progress = HabitProgress()
         switch goal?.getGoalPeriod() {
         case .daily:
-            break
+            
+            let dailyProgress = DailyProgress(on: Date())
+            
+            self.todayProgress = dailyProgress
+            
         case .weekly:
             break
         case .monthly:

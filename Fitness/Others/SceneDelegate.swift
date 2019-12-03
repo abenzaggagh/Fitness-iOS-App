@@ -12,16 +12,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    var isLogin = true /// TODO: This variable must be implemented in UserDefaults not on the AppDelegate
+    var isLogin: Bool?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        self.isLogin = UserDefaults.standard.bool(forKey: "isLogin")
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        if isLogin {
+        if isLogin != nil, isLogin == true {
             
             let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main")
@@ -59,7 +61,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
         
     }
-
 
 }
 
