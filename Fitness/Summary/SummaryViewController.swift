@@ -8,16 +8,13 @@
 
 import UIKit
 
-class SummaryNavigationController: UINavigationController {
-    
-    
-    
-}
-
 class SummaryViewController: UIViewController {
 
+    @IBOutlet weak var profileButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
         
@@ -25,6 +22,24 @@ class SummaryViewController: UIViewController {
         
         search.searchResultsUpdater = self as? UISearchResultsUpdating
         self.navigationItem.searchController = search
+        
+        // TODO: Left Profile Button
+        
+        // TEST DB CONNECTION
+        
+//        let path = "http://localhost:4000/user/5de43169f427e00c06dc505d"
+//
+//        let url = URL(string: path)!
+//
+//        let defaultSession = URLSession(configuration: .default)
+//
+//        let task = defaultSession.dataTask(with: url, completionHandler: { data, response, error in
+//
+//            print(data)
+//
+//        })
+//        task.resume()
+        
     }
     
 
@@ -37,12 +52,10 @@ class SummaryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-}
-
-
-class SummaryViewTabBarItem: UITabBarItem {
     
+    @IBAction func profile(_ sender: Any) {
+        
+    }
     
-    
+
 }

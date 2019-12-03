@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qfb-gn-McG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,7 @@
         <!--Summary-->
         <scene sceneID="lba-ok-jBf">
             <objects>
-                <navigationController id="qfb-gn-McG" customClass="SummaryNavigationController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="qfb-gn-McG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Summary" image="Summary" id="Re6-X1-oDN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="nFt-hp-EO5">
@@ -35,14 +36,77 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="svF-pC-f1h"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Summary" leftItemsSupplementBackButton="YES" id="eaw-it-Mrc"/>
+                    <navigationItem key="navigationItem" title="Summary" leftItemsSupplementBackButton="YES" id="eaw-it-Mrc">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="6E1-cL-ChL">
+                            <connections>
+                                <action selector="profile:" destination="RVZ-Ev-3qR" id="UQu-em-Bko"/>
+                                <segue destination="RnX-jX-bhV" kind="showDetail" id="eIC-qS-Xam"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="profileButton" destination="6E1-cL-ChL" id="OKQ-co-sf1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdq-TG-3Rb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2204" y="10"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Cow-in-TmJ">
+            <objects>
+                <viewController id="RnX-jX-bhV" customClass="ProfileViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dth-Uz-JZv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJc-6q-5pZ">
+                                <rect key="frame" x="20" y="778" width="374" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" name="DMBlack"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="RnX-jX-bhV" eventType="touchUpInside" id="LHi-1b-bCp"/>
+                                    <action selector="logout:" destination="bys-60-upE" eventType="touchUpInside" id="n2B-sB-r8T"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-6Z-v8N">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Profile" id="qV1-Ml-Ivj"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MAT-Ni-PnU">
+                                <rect key="frame" x="0.0" y="56" width="414" height="714"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MAT-Ni-PnU" firstAttribute="trailing" secondItem="syc-M5-8GG" secondAttribute="trailing" id="3de-9W-YBM"/>
+                            <constraint firstItem="syc-M5-8GG" firstAttribute="trailing" secondItem="JJc-6q-5pZ" secondAttribute="trailing" constant="20" id="8fq-ML-6me"/>
+                            <constraint firstItem="JJc-6q-5pZ" firstAttribute="top" secondItem="MAT-Ni-PnU" secondAttribute="bottom" constant="8" id="Etj-Mh-aYp"/>
+                            <constraint firstItem="VH3-6Z-v8N" firstAttribute="leading" secondItem="syc-M5-8GG" secondAttribute="leading" id="Fnv-x5-HwW"/>
+                            <constraint firstItem="VH3-6Z-v8N" firstAttribute="trailing" secondItem="syc-M5-8GG" secondAttribute="trailing" id="Iv5-tg-zxM"/>
+                            <constraint firstItem="JJc-6q-5pZ" firstAttribute="bottom" secondItem="syc-M5-8GG" secondAttribute="bottom" id="Qlc-G2-dix"/>
+                            <constraint firstItem="MAT-Ni-PnU" firstAttribute="leading" secondItem="syc-M5-8GG" secondAttribute="leading" id="YbU-Rz-MqV"/>
+                            <constraint firstItem="JJc-6q-5pZ" firstAttribute="leading" secondItem="syc-M5-8GG" secondAttribute="leading" constant="20" id="bKo-F0-gRF"/>
+                            <constraint firstItem="MAT-Ni-PnU" firstAttribute="top" secondItem="VH3-6Z-v8N" secondAttribute="bottom" id="yJf-hD-XEz"/>
+                            <constraint firstItem="VH3-6Z-v8N" firstAttribute="top" secondItem="syc-M5-8GG" secondAttribute="top" id="yV2-0Y-VYQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="syc-M5-8GG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLD-7k-1WE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bys-60-upE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-2204.3478260869565" y="809.59821428571422"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Summary" width="30" height="30"/>
+        <namedColor name="DMBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
