@@ -24,6 +24,8 @@
 		C564E87A2376EB0800190832 /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C564E8792376EB0800190832 /* Summary.storyboard */; };
 		C564E87D2376F0B800190832 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564E87C2376F0B800190832 /* AuthenticationViewController.swift */; };
 		C564E87F2376F0DD00190832 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C564E87E2376F0DD00190832 /* Authentication.storyboard */; };
+		C56BE7BF239865E800413017 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BE7BE239865E800413017 /* ForgotPasswordViewController.swift */; };
+		C56BE7C22398664100413017 /* FAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56BE7C12398664100413017 /* FAButton.swift */; };
 		C56F52882396A38600823DA1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56F52872396A38600823DA1 /* SignUpViewController.swift */; };
 		C576FFA8238DAD1200037446 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576FFA7238DAD1200037446 /* HabitDetailsViewController.swift */; };
 		C576FFAB238DAF9E00037446 /* FHTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576FFAA238DAF9E00037446 /* FHTypeView.swift */; };
@@ -71,6 +73,8 @@
 		C564E8792376EB0800190832 /* Summary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
 		C564E87C2376F0B800190832 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		C564E87E2376F0DD00190832 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		C56BE7BE239865E800413017 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		C56BE7C12398664100413017 /* FAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAButton.swift; sourceTree = "<group>"; };
 		C56F52872396A38600823DA1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C576FFA7238DAD1200037446 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 		C576FFAA238DAF9E00037446 /* FHTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHTypeView.swift; sourceTree = "<group>"; };
@@ -206,10 +210,19 @@
 		C564E87B2376F09800190832 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				C56BE7C02398661C00413017 /* Views */,
 				C5E0A77523959B3C00D160D9 /* Controllers */,
 				C564E87E2376F0DD00190832 /* Authentication.storyboard */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C56BE7C02398661C00413017 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C56BE7C12398664100413017 /* FAButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C576FFA9238DAF6900037446 /* Habit Creation */ = {
@@ -305,6 +318,7 @@
 				C564E87C2376F0B800190832 /* AuthenticationViewController.swift */,
 				C5E0A77623959BB000D160D9 /* LoginViewController.swift */,
 				C56F52872396A38600823DA1 /* SignUpViewController.swift */,
+				C56BE7BE239865E800413017 /* ForgotPasswordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C56BE7BF239865E800413017 /* ForgotPasswordViewController.swift in Sources */,
 				C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */,
 				C5E0A76E239337E200D160D9 /* HabitTableViewCell.swift in Sources */,
 				C536F76E23801CFA00631ADB /* FHNoHabitsView.swift in Sources */,
@@ -405,6 +420,7 @@
 				C540F5F723912BE300CD26ED /* Persistable.swift in Sources */,
 				C564E8672376EAEA00190832 /* MainViewController.swift in Sources */,
 				C5E0A77223946AEB00D160D9 /* User.swift in Sources */,
+				C56BE7C22398664100413017 /* FAButton.swift in Sources */,
 				C576FFA8238DAD1200037446 /* HabitDetailsViewController.swift in Sources */,
 				C5F6D397237C535600D7C2AF /* WorkoutViewController.swift in Sources */,
 				C59694CD238C8EAB0079761F /* Habit.swift in Sources */,

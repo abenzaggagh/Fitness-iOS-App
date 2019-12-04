@@ -11,7 +11,9 @@ import UIKit
 class LoginViewController: UIViewController {
     
     let user: User? = nil
-
+    
+    @IBOutlet var loadingView: UIView!
+    
     @IBOutlet weak var errorMessageView: UIView! {
         didSet {
             errorMessageView.setShadowView()
@@ -21,8 +23,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField! {
         didSet {
             emailTextField.tintColor = UIColor.lightGray
-            emailTextField.setIcon(UIImage(named: "Email")!)
-            // emailTextField.setBottomBorder()
+            emailTextField.setIcon(UIImage(named: "Username")!)
         }
     }
     
@@ -30,7 +31,6 @@ class LoginViewController: UIViewController {
         didSet {
             passwordTextField.tintColor = UIColor.lightGray
             passwordTextField.setIcon(UIImage(named: "Password")!)
-            // passwordTextField.setBottomBorder()
         }
     }
     
@@ -48,16 +48,23 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.view.addSubview(errorMessageView)
+        self.view.addSubview(loadingView)
     }
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingView.isHidden = true
         loginButton.layer.cornerRadius = 12
         twitterButton.layer.cornerRadius = 12
         facebookButton.layer.cornerRadius = 12
     }
 
     @IBAction func hideErrorMessage(_ sender: UIButton) {
+        errorMessageView.isHidden = true
+    }
+    
+    
+    @IBAction func forgetPassword(_ sender: UIButton) {
         errorMessageView.isHidden = true
     }
     
@@ -76,5 +83,14 @@ class LoginViewController: UIViewController {
         
     }
     
+    @IBAction func loginWithFacebook(_ sender: UIButton) {
+        errorMessageView.isHidden = true
+        
+    }
+    
+    @IBAction func loginWithTwitter(_ sender: UIButton) {
+        errorMessageView.isHidden = true
+        
+    }
     
 }
