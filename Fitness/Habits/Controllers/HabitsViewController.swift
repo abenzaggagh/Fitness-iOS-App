@@ -12,6 +12,10 @@ public protocol HabitDelegate {
     func addHabit(habit newHabit: Habit)
 }
 
+public protocol HabitCellDelegate {
+    func openHabitDetails()
+}
+
 class HabitsViewContoller: UITableViewController {
     
     private lazy var habits = [Habit]()
@@ -36,9 +40,19 @@ class HabitsViewContoller: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier, identifier == "New Habit" {
-            if let destinationViewController = segue.destination as? HabitCreationViewController {
-                destinationViewController.modalPresentationStyle = .fullScreen
-                destinationViewController.habitdelegate = self
+            switch identifier {
+            case "New Habit":
+                if let destinationViewController = segue.destination as? HabitCreationViewController {
+                    destinationViewController.modalPresentationStyle = .fullScreen
+                    destinationViewController.habitdelegate = self
+                }
+            case "Habit Details":
+                if let destinationViewController = segue.destination as? HabitDetailsViewController {
+                    destinationViewController.modalPresentationStyle = .fullScreen
+                    self.present(destinationViewController, animated: false, completion: nil)
+                }
+            default:
+                break
             }
         }
     }

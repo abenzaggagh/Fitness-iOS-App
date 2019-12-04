@@ -53,11 +53,11 @@
             <objects>
                 <viewController storyboardIdentifier="HabitsCreationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OCs-dc-oy2" customClass="HabitCreationViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6zy-Fo-ZTA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGk-QV-Nop">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
@@ -84,7 +84,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="4xM-Se-iiC">
-                                <rect key="frame" x="0.0" y="56" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="668"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="kxb-at-ZWb"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="KVt-dZ-U91"/>
                             </scrollView>
@@ -176,7 +176,7 @@
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Read More Book, Quit Smoking..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-Fl-H7U">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Read More Books, Quit Smoking..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-Fl-H7U">
                                     <rect key="frame" x="0.0" y="53.333333333333343" width="335" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="oG0-JV-jZC"/>
@@ -450,7 +450,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RDx-fV-IKd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitTableViewCell" id="RDx-fV-IKd">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RDx-fV-IKd" id="VmE-0s-WQ2">
@@ -458,7 +458,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kwr-Ac-3C4" kind="presentation" identifier="HabitDetailsSegue" destinationCreationSelector="Create Habit" modalPresentationStyle="fullScreen" id="xbg-mx-KFh"/>
+                                    <segue destination="kwr-Ac-3C4" kind="presentation" identifier="Habit Details" destinationCreationSelector="Habit Details" modalPresentationStyle="fullScreen" id="xbg-mx-KFh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -472,7 +472,7 @@
                             <color key="tintColor" name="DMBlack"/>
                             <connections>
                                 <action selector="newHabit:" destination="tdQ-IZ-b0s" id="3Wl-xA-jhV"/>
-                                <segue destination="OCs-dc-oy2" kind="presentation" identifier="New Habit" id="th6-Tl-1XF"/>
+                                <segue destination="OCs-dc-oy2" kind="presentation" identifier="New Habit" destinationCreationSelector="New Habit" modalPresentationStyle="fullScreen" id="th6-Tl-1XF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -16,7 +16,6 @@ class HabitTableViewCell: UITableViewCell {
         
     override func awakeFromNib() {
         super.awakeFromNib()
-        // layer.cornerRadius = 12
         
     }
 
