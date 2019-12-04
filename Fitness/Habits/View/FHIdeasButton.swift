@@ -29,6 +29,4 @@ class FHIdeasButton: UIButton {
         setTitleColor(habitTitleColor, for: .normal)
     }
     
-    
-    
 }

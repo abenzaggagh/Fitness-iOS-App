@@ -31,6 +31,7 @@
 		C58AB5C123789E3100BB3313 /* Meals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58AB5C023789E3100BB3313 /* Meals.storyboard */; };
 		C58AB5C323789E4200BB3313 /* Sleep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58AB5C223789E4200BB3313 /* Sleep.storyboard */; };
 		C58AB5C62378A73000BB3313 /* Habits.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C58AB5C52378A73000BB3313 /* Habits.storyboard */; };
+		C593F40E239829A400BB5575 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593F40D239829A400BB5575 /* Extenstions.swift */; };
 		C59694CB238C8E110079761F /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59694CA238C8E110079761F /* Progress.swift */; };
 		C59694CD238C8EAB0079761F /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59694CC238C8EAB0079761F /* Habit.swift */; };
 		C5A5C251237DC5170043F89D /* MapWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5C250237DC5170043F89D /* MapWorkoutView.swift */; };
@@ -77,6 +78,7 @@
 		C58AB5C023789E3100BB3313 /* Meals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Meals.storyboard; sourceTree = "<group>"; };
 		C58AB5C223789E4200BB3313 /* Sleep.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sleep.storyboard; sourceTree = "<group>"; };
 		C58AB5C52378A73000BB3313 /* Habits.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Habits.storyboard; sourceTree = "<group>"; };
+		C593F40D239829A400BB5575 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		C59694CA238C8E110079761F /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		C59694CC238C8EAB0079761F /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		C5A5C250237DC5170043F89D /* MapWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorkoutView.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				C564E8622376EAEA00190832 /* AppDelegate.swift */,
 				C564E8642376EAEA00190832 /* SceneDelegate.swift */,
+				C593F40D239829A400BB5575 /* Extenstions.swift */,
 				C564E8702376EAED00190832 /* LaunchScreen.storyboard */,
 			);
 			path = Others;
@@ -414,6 +417,7 @@
 				C536F77423803C9900631ADB /* FHIdeasButton.swift in Sources */,
 				C5A5C251237DC5170043F89D /* MapWorkoutView.swift in Sources */,
 				C576FFAD238EFCB500037446 /* Reminder.swift in Sources */,
+				C593F40E239829A400BB5575 /* Extenstions.swift in Sources */,
 				C536F76C2380074B00631ADB /* FHColorButton.swift in Sources */,
 				C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */,
 				C564E8652376EAEA00190832 /* SceneDelegate.swift in Sources */,
