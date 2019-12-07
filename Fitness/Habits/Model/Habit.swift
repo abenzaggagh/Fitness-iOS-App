@@ -97,68 +97,71 @@ struct Goal: Codable {
 }
 
 
-public class Habit: Codable {
-    
-    var name: String?
-    var type: Type?
-    var goal: Goal?
-    
-    var todayProgress: HabitProgress?
-    
-    var progress = [HabitProgress]()
-    var reminder = [HabitReminder]()
-    
-    var createdAt: Date?
-    
-    public var note: String?
-    
-    
-    /// Codable Methods
-    required public init(from decoder: Decoder) {
-    
-    }
-    
-    public func encode(to encoder: Encoder) throws {
-        
-    }
-    
-    init(name: String, type: Type, goal: Goal, note: String) {
-        self.name = name
-        self.type = type
-        self.goal = goal
-        self.note = note
-    }
-    
-    init(isNew: Bool) {
-        self.name = nil
-        self.type = nil
-        self.goal = nil
-        self.createdAt = isNew ? Date() : nil
-    }
-    
-    func addNewProgress() {
-        // let progress = HabitProgress()
-        switch goal?.getGoalPeriod() {
-        case .daily:
-            
-            let dailyProgress = DailyProgress(on: Date())
-            
-            self.todayProgress = dailyProgress
-            
-        case .weekly:
-            break
-        case .monthly:
-            break
-        case .yearly:
-            break
-        case .none:
-            break
-        }
-    }
-    
-    func addProgress(with progress: HabitProgress) {
-        self.progress.append(progress)
-    }
+//extension Habit: Codable {
+//
+//    var name: String?
+//    var type: Type?
+//    var goal: Goal?
+//
+//    var todayProgress: HabitProgress?
+//
+//    var progress = [HabitProgress]()
+//    var reminder = [HabitReminder]()
+//
+//    var createdAt: Date?
+//
+//    public var note: String?
+//
+//
+//    /// Codable Methods
+//    required public init(from decoder: Decoder) {
+//
+//    }
+//
+//    public func encode(to encoder: Encoder) throws {
+//
+//    }
+//
+//    init(name: String, type: Type, goal: Goal, note: String) {
+//        self.name = name
+//        self.type = type
+//        self.goal = goal
+//        self.note = note
+//    }
+//
+//    init(isNew: Bool) {
+//        self.name = nil
+//        self.type = nil
+//        self.goal = nil
+//        self.createdAt = isNew ? Date() : nil
+//    }
+//
+//    func addNewProgress() {
+//        // let progress = HabitProgress()
+//        switch goal?.getGoalPeriod() {
+//        case .daily:
+//
+//            let dailyProgress = DailyProgress(on: Date())
+//
+//            self.todayProgress = dailyProgress
+//
+//        case .weekly:
+//            break
+//        case .monthly:
+//            break
+//        case .yearly:
+//            break
+//        case .none:
+//            break
+//        }
+//    }
+//
+//    func addProgress(with progress: HabitProgress) {
+//        self.progress.append(progress)
+//    }
+//
+//}
+
+extension Habit {
     
 }
-

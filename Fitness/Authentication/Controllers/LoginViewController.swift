@@ -58,6 +58,11 @@ class LoginViewController: UIViewController {
         twitterButton.layer.cornerRadius = 12
         facebookButton.layer.cornerRadius = 12
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        errorMessageView.isHidden = true
+    }
 
     @IBAction func hideErrorMessage(_ sender: UIButton) {
         errorMessageView.isHidden = true
@@ -85,6 +90,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginWithFacebook(_ sender: UIButton) {
         errorMessageView.isHidden = true
+        
+        UserDefaults.standard.set(true, forKey: "isLogin")
+
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let initialViewController = mainStoryboard.instantiateInitialViewController() else { return }
+
+        initialViewController.modalPresentationStyle = .fullScreen
+
+        self.present(initialViewController, animated: true, completion: nil)
         
     }
     

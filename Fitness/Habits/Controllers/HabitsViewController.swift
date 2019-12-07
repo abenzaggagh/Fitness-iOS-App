@@ -24,22 +24,22 @@ class HabitsViewContoller: UITableViewController {
 
     @IBOutlet weak var newHabitButton: UIBarButtonItem!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.registerTableViewCells()
         
-        let myGoal = Goal(period: .daily, frequency: 3)
-        
-        let myhabit = Habit(name: "Quit Smoking", type: .build, goal: myGoal, note: "No more cigarette I swear")
-        
-        habits.append(myhabit)
+        self.habits = try! persistance.context.fetch(Habit.fetchRequest()) as! [Habit]
         
         self.tableView.reloadData()
-
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier, identifier == "New Habit" {
+        if let identifier = segue.identifier {
             switch identifier {
             case "New Habit":
                 if let destinationViewController = segue.destination as? HabitCreationViewController {
@@ -47,9 +47,10 @@ class HabitsViewContoller: UITableViewController {
                     destinationViewController.habitdelegate = self
                 }
             case "Habit Details":
-                if let destinationViewController = segue.destination as? HabitDetailsViewController {
-                    destinationViewController.modalPresentationStyle = .fullScreen
-                    self.present(destinationViewController, animated: false, completion: nil)
+                if let habit = sender as? Habit {
+                    if let destinationViewController = segue.destination as? HabitDetailsViewController {
+                        destinationViewController.habit = habit
+                    }
                 }
             default:
                 break
@@ -94,10 +95,14 @@ class HabitsViewContoller: UITableViewController {
             let cell = UITableViewCell()
             let habit = habits[indexPath.row]
             cell.textLabel?.text = "\(String(describing: habit.name!))"
-            cell.detailTextLabel?.text = "Created At \(String(describing: habit.createdAt))"
             return cell
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let habit = habits[indexPath.row]
+        performSegue(withIdentifier: "Habit Details", sender: habit)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

@@ -41,6 +41,7 @@
 		C5B09B46239075CA00FE5FE3 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B45239075CA00FE5FE3 /* Networkable.swift */; };
 		C5B09B492391292200FE5FE3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B482391292100FE5FE3 /* NetworkService.swift */; };
 		C5B09B4B2391294500FE5FE3 /* PresistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */; };
+		C5BCAC49239C671C0099A9AE /* Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5BCAC47239C671C0099A9AE /* Fitness.xcdatamodeld */; };
 		C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */; };
 		C5C3A7DC23788C8A00AA773D /* Workout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5C3A7DB23788C8A00AA773D /* Workout.storyboard */; };
 		C5C8012A237DD12200584789 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C80129237DD12200584789 /* HistoryViewController.swift */; };
@@ -90,6 +91,7 @@
 		C5B09B45239075CA00FE5FE3 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
 		C5B09B482391292100FE5FE3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresistenceService.swift; sourceTree = "<group>"; };
+		C5BCAC48239C671C0099A9AE /* Fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fitness.xcdatamodel; sourceTree = "<group>"; };
 		C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		C5C3A7DB23788C8A00AA773D /* Workout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Workout.storyboard; sourceTree = "<group>"; };
 		C5C80129237DD12200584789 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				C564E8642376EAEA00190832 /* SceneDelegate.swift */,
 				C593F40D239829A400BB5575 /* Extenstions.swift */,
 				C564E8702376EAED00190832 /* LaunchScreen.storyboard */,
+				C5BCAC47239C671C0099A9AE /* Fitness.xcdatamodeld */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			files = (
 				C56BE7BF239865E800413017 /* ForgotPasswordViewController.swift in Sources */,
 				C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */,
+				C5BCAC49239C671C0099A9AE /* Fitness.xcdatamodeld in Sources */,
 				C5E0A76E239337E200D160D9 /* HabitTableViewCell.swift in Sources */,
 				C536F76E23801CFA00631ADB /* FHNoHabitsView.swift in Sources */,
 				C536F761237EDF3B00631ADB /* HabitCreationViewController.swift in Sources */,
@@ -652,6 +656,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C5BCAC47239C671C0099A9AE /* Fitness.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C5BCAC48239C671C0099A9AE /* Fitness.xcdatamodel */,
+			);
+			currentVersion = C5BCAC48239C671C0099A9AE /* Fitness.xcdatamodel */;
+			path = Fitness.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C564E8572376EAEA00190832 /* Project object */;
 }

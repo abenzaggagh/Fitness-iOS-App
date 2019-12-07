@@ -13,7 +13,7 @@ import UIKit
 // Modal View Controller
 class HabitCreationViewController: UIViewController {
     
-    private lazy var habit = Habit(isNew: true)
+    // private lazy var habit // Habit(isNew: true)
     
     var habitdelegate: HabitDelegate!
     
@@ -73,33 +73,46 @@ class HabitCreationViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         
-        habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)
-
+//        habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)
+//
+//        if habitNameTextField.text != nil, !habitNameTextField.text!.isEmpty {
+//            habit.name = habitNameTextField.text
+//        } else {
+//            habitNameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 2.0, revert: true)
+//        }
+//
+//        let goalPeriod = GoalPeriod(rawValue: goalPeriodSegementedControl!.selectedSegmentIndex) ?? nil
+//
+//        let goalFrequency = Int(goalFrequencyStepper.value)
+//        var trackingDays = DailyDays()
+//
+//        var goal = Goal(period: goalPeriod!, frequency: goalFrequency)
+//
+//        if goalPeriod == .daily {
+//            for goalTrackingDaysButton in goalTrackingDaysButtons {
+//                trackingDays.on(day: goalTrackingDaysButton.currentTitle!, is: goalTrackingDaysButton.isActive())
+//            }
+//            goal.setTracking(days: trackingDays)
+//        }
+//
+//        habit.createdAt = Date()
+//        
+//        habitdelegate.addHabit(habit: habit)
+        
+        let habit = Habit(entity: Habit.entity(), insertInto: persistance.context)
+        
         if habitNameTextField.text != nil, !habitNameTextField.text!.isEmpty {
-            habit.name = habitNameTextField.text
+            
+            habit.name = habitNameTextField.text // as! String
+            habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)?.description
+            
+            persistance.save()
+            
+            self.dismiss(animated: true, completion: nil)
+            
         } else {
             habitNameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 2.0, revert: true)
         }
-
-        let goalPeriod = GoalPeriod(rawValue: goalPeriodSegementedControl!.selectedSegmentIndex) ?? nil
-
-        let goalFrequency = Int(goalFrequencyStepper.value)
-        var trackingDays = DailyDays()
-
-        var goal = Goal(period: goalPeriod!, frequency: goalFrequency)
-
-        if goalPeriod == .daily {
-            for goalTrackingDaysButton in goalTrackingDaysButtons {
-                trackingDays.on(day: goalTrackingDaysButton.currentTitle!, is: goalTrackingDaysButton.isActive())
-            }
-            goal.setTracking(days: trackingDays)
-        }
-
-        habit.createdAt = Date()
-        
-        habitdelegate.addHabit(habit: habit)
-        
-        self.dismiss(animated: true, completion: nil)
         
     }
     
