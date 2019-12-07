@@ -9,6 +9,8 @@
 import UIKit
 
 class HabitDetailsViewController: UIViewController {
+    
+    var habit: Habit?
 
     override func viewDidLoad() {
         super.viewDidLoad()

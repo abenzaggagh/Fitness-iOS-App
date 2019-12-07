@@ -457,9 +457,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="kwr-Ac-3C4" kind="presentation" identifier="Habit Details" destinationCreationSelector="Habit Details" modalPresentationStyle="fullScreen" id="xbg-mx-KFh"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -478,6 +475,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="newHabitButton" destination="kQy-4r-QDJ" id="cfV-9e-vFM"/>
+                        <segue destination="kwr-Ac-3C4" kind="show" identifier="Habit Details" id="wlM-zF-wWA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQ1-Lo-Vzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
