@@ -14,8 +14,15 @@ class HabitDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(habit?.name ?? "N/A")
+        print(habit?.type ?? "N/A")
+        print(habit?.longestStreak ?? "N/A")
+        print(habit?.currentStreak ?? "N/A")
+        print(habit?.goalFrequency ?? "N/A")
+        print(habit?.goalPeriod ?? "N/A")
+        print(habit?.startDate ?? "N/A")
 
-        // Do any additional setup after loading the view.
     }
     
 

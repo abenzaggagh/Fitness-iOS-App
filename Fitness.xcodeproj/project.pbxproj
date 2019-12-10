@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72FCC922D1096D0535F7D111 /* Pods_Fitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250621D09425F19DA428DACF /* Pods_Fitness.framework */; };
 		C536F761237EDF3B00631ADB /* HabitCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F760237EDF3B00631ADB /* HabitCreationViewController.swift */; };
 		C536F765237EE22500631ADB /* FHDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F764237EE22500631ADB /* FHDayButton.swift */; };
 		C536F76A237F272000631ADB /* FHDayHabits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F769237F272000631ADB /* FHDayHabits.swift */; };
@@ -50,11 +51,15 @@
 		C5E0A76F239337E200D160D9 /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E0A76D239337E200D160D9 /* HabitTableViewCell.xib */; };
 		C5E0A77223946AEB00D160D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0A77123946AEB00D160D9 /* User.swift */; };
 		C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0A77623959BB000D160D9 /* LoginViewController.swift */; };
+		C5E49259239D5DF8008471E5 /* HabitProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E49258239D5DF8008471E5 /* HabitProgressView.swift */; };
 		C5F6733B2379977400BACBFA /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F6733A2379977400BACBFA /* HabitsViewController.swift */; };
 		C5F6D397237C535600D7C2AF /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F6D396237C535600D7C2AF /* WorkoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C2FC0C83D43216F6F288F7 /* Pods-Fitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness.debug.xcconfig"; path = "Target Support Files/Pods-Fitness/Pods-Fitness.debug.xcconfig"; sourceTree = "<group>"; };
+		250621D09425F19DA428DACF /* Pods_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77618EA8936A07C04223B2BA /* Pods-Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness.release.xcconfig"; path = "Target Support Files/Pods-Fitness/Pods-Fitness.release.xcconfig"; sourceTree = "<group>"; };
 		C536F760237EDF3B00631ADB /* HabitCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreationViewController.swift; sourceTree = "<group>"; };
 		C536F764237EE22500631ADB /* FHDayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHDayButton.swift; sourceTree = "<group>"; };
 		C536F769237F272000631ADB /* FHDayHabits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHDayHabits.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 		C5E0A76D239337E200D160D9 /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
 		C5E0A77123946AEB00D160D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C5E0A77623959BB000D160D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C5E49258239D5DF8008471E5 /* HabitProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressView.swift; sourceTree = "<group>"; };
 		C5F6733A2379977400BACBFA /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		C5F6D396237C535600D7C2AF /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,12 +115,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72FCC922D1096D0535F7D111 /* Pods_Fitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E026AEA3C4542784CB8D94A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09C2FC0C83D43216F6F288F7 /* Pods-Fitness.debug.xcconfig */,
+				77618EA8936A07C04223B2BA /* Pods-Fitness.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AAC4EB610F7B47D9D3E35D2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				250621D09425F19DA428DACF /* Pods_Fitness.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C536F762237EE12D00631ADB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,11 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				C576FFA9238DAF6900037446 /* Habit Creation */,
-				C536F764237EE22500631ADB /* FHDayButton.swift */,
-				C536F769237F272000631ADB /* FHDayHabits.swift */,
-				C536F76B2380074B00631ADB /* FHColorButton.swift */,
-				C536F76D23801CFA00631ADB /* FHNoHabitsView.swift */,
-				C536F77323803C9900631ADB /* FHIdeasButton.swift */,
+				C5E49258239D5DF8008471E5 /* HabitProgressView.swift */,
 				C5E0A76C239337E200D160D9 /* HabitTableViewCell.swift */,
 				C5E0A76D239337E200D160D9 /* HabitTableViewCell.xib */,
 			);
@@ -179,6 +199,8 @@
 			children = (
 				C564E8612376EAEA00190832 /* Fitness */,
 				C564E8602376EAEA00190832 /* Products */,
+				8E026AEA3C4542784CB8D94A /* Pods */,
+				AAC4EB610F7B47D9D3E35D2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +252,11 @@
 		C576FFA9238DAF6900037446 /* Habit Creation */ = {
 			isa = PBXGroup;
 			children = (
+				C536F764237EE22500631ADB /* FHDayButton.swift */,
+				C536F769237F272000631ADB /* FHDayHabits.swift */,
+				C536F76B2380074B00631ADB /* FHColorButton.swift */,
+				C536F76D23801CFA00631ADB /* FHNoHabitsView.swift */,
+				C536F77323803C9900631ADB /* FHIdeasButton.swift */,
 				C576FFAA238DAF9E00037446 /* FHTypeView.swift */,
 			);
 			path = "Habit Creation";
@@ -343,9 +370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C564E8762376EAED00190832 /* Build configuration list for PBXNativeTarget "Fitness" */;
 			buildPhases = (
+				690F45AAC96DC0D7DA33F761 /* [CP] Check Pods Manifest.lock */,
 				C564E85B2376EAEA00190832 /* Sources */,
 				C564E85C2376EAEA00190832 /* Frameworks */,
 				C564E85D2376EAEA00190832 /* Resources */,
+				6642E9BCF2BEB5DD9B45AF35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -410,6 +439,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6642E9BCF2BEB5DD9B45AF35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		690F45AAC96DC0D7DA33F761 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fitness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C564E85B2376EAEA00190832 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -442,6 +513,7 @@
 				C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */,
 				C564E8652376EAEA00190832 /* SceneDelegate.swift in Sources */,
 				C576FFAB238DAF9E00037446 /* FHTypeView.swift in Sources */,
+				C5E49259239D5DF8008471E5 /* HabitProgressView.swift in Sources */,
 				C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */,
 				C56F52882396A38600823DA1 /* SignUpViewController.swift in Sources */,
 				C5B09B4B2391294500FE5FE3 /* PresistenceService.swift in Sources */,
@@ -524,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -578,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -590,6 +662,7 @@
 		};
 		C564E8772376EAED00190832 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C2FC0C83D43216F6F288F7 /* Pods-Fitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -603,6 +676,33 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amine.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -613,6 +713,7 @@
 		};
 		C564E8782376EAED00190832 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77618EA8936A07C04223B2BA /* Pods-Fitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -626,6 +727,33 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"z\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-weak_framework",
+					"\"Accounts\"",
+					"-weak_framework",
+					"\"AudioToolbox\"",
+					"-weak_framework",
+					"\"CoreGraphics\"",
+					"-weak_framework",
+					"\"CoreLocation\"",
+					"-weak_framework",
+					"\"Foundation\"",
+					"-weak_framework",
+					"\"QuartzCore\"",
+					"-weak_framework",
+					"\"Security\"",
+					"-weak_framework",
+					"\"Social\"",
+					"-weak_framework",
+					"\"UIKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amine.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

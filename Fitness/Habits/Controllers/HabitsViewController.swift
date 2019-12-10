@@ -28,6 +28,10 @@ class HabitsViewContoller: UITableViewController {
         super.viewWillAppear(animated)
         self.registerTableViewCells()
         
+        self.tableView.separatorStyle = .none
+        self.tableView.allowsMultipleSelection = false
+        self.tableView.allowsSelectionDuringEditing = false
+        
         self.habits = try! persistance.context.fetch(Habit.fetchRequest()) as! [Habit]
         
         self.tableView.reloadData()
@@ -44,7 +48,6 @@ class HabitsViewContoller: UITableViewController {
             case "New Habit":
                 if let destinationViewController = segue.destination as? HabitCreationViewController {
                     destinationViewController.modalPresentationStyle = .fullScreen
-                    destinationViewController.habitdelegate = self
                 }
             case "Habit Details":
                 if let habit = sender as? Habit {
@@ -87,10 +90,15 @@ class HabitsViewContoller: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HabitTableViewCell") as? HabitTableViewCell {
+            
             let habit = habits[indexPath.row]
+            cell.habit = habit
+            
             cell.habitNameLabel?.text = "\(String(describing: habit.name!))"
-            cell.habitProgressView.progress = 1.0
+            cell.habitProgressView.progress = 0.5
+            
             return cell
+            
         } else {
             let cell = UITableViewCell()
             let habit = habits[indexPath.row]
@@ -107,10 +115,14 @@ class HabitsViewContoller: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            // Display a confirmation message...
             tableView.beginUpdates()
+            let habit = habits[indexPath.row]
+            persistance.context.delete(habit)
             habits.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
+            persistance.save()
         }
     }
     

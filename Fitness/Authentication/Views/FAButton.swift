@@ -10,10 +10,16 @@ import UIKit
 
 class FAButton: UIButton {
 
-    
-    override func draw(_ rect: CGRect) {
-        
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.cornerRadius = 12
     }
     
-
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        layer.cornerRadius = 12
+        self.showsTouchWhenHighlighted = true
+    }
+    
 }

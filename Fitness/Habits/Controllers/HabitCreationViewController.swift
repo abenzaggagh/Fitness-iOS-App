@@ -13,10 +13,6 @@ import UIKit
 // Modal View Controller
 class HabitCreationViewController: UIViewController {
     
-    // private lazy var habit // Habit(isNew: true)
-    
-    var habitdelegate: HabitDelegate!
-    
     @IBOutlet weak var newHabitScrollView: UIScrollView!
     @IBOutlet weak var newHabitContentView: UIView!
     
@@ -73,38 +69,19 @@ class HabitCreationViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         
-//        habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)
-//
-//        if habitNameTextField.text != nil, !habitNameTextField.text!.isEmpty {
-//            habit.name = habitNameTextField.text
-//        } else {
-//            habitNameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 2.0, revert: true)
-//        }
-//
-//        let goalPeriod = GoalPeriod(rawValue: goalPeriodSegementedControl!.selectedSegmentIndex) ?? nil
-//
-//        let goalFrequency = Int(goalFrequencyStepper.value)
-//        var trackingDays = DailyDays()
-//
-//        var goal = Goal(period: goalPeriod!, frequency: goalFrequency)
-//
-//        if goalPeriod == .daily {
-//            for goalTrackingDaysButton in goalTrackingDaysButtons {
-//                trackingDays.on(day: goalTrackingDaysButton.currentTitle!, is: goalTrackingDaysButton.isActive())
-//            }
-//            goal.setTracking(days: trackingDays)
-//        }
-//
-//        habit.createdAt = Date()
-//        
-//        habitdelegate.addHabit(habit: habit)
-        
         let habit = Habit(entity: Habit.entity(), insertInto: persistance.context)
         
         if habitNameTextField.text != nil, !habitNameTextField.text!.isEmpty {
             
-            habit.name = habitNameTextField.text // as! String
+            habit.name = habitNameTextField.text
             habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)?.description
+            habit.goalPeriod = GoalPeriod(rawValue: goalPeriodSegementedControl.selectedSegmentIndex)?.description
+            habit.goalFrequency = Int32(goalFrequencyStepper.value)
+            
+            habit.startDate = Date()
+            
+            habit.currentStreak = 0
+            habit.longestStreak = 0
             
             persistance.save()
             
@@ -141,40 +118,4 @@ class HabitCreationViewController: UIViewController {
 
 
 
-extension UITextField {
-    
-    func isError(baseColor: CGColor, numberOfShakes shakes: Float, revert: Bool) {
-        
-        let animation: CABasicAnimation = CABasicAnimation(keyPath: "shadowColor")
-        
-        animation.fromValue = baseColor
-        animation.toValue = UIColor.red.cgColor
-        animation.duration = 0.4
-        
-        if revert {
-            animation.autoreverses = true
-        } else {
-            animation.autoreverses = false
-        }
-        
-        self.layer.add(animation, forKey: "")
 
-        let shake: CABasicAnimation = CABasicAnimation(keyPath: "position")
-        
-        shake.duration = 0.07
-        shake.repeatCount = shakes
-        
-        if revert {
-            shake.autoreverses = true
-        } else {
-            shake.autoreverses = false
-        }
-        
-        shake.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 10, y: self.center.y))
-        shake.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 10, y: self.center.y))
-        
-        self.layer.add(shake, forKey: "position")
-        
-    }
-    
-}

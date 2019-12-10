@@ -41,7 +41,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tdQ-IZ-b0s" kind="relationship" relationship="rootViewController" id="MCX-ev-Xzz"/>
+                        <segue destination="tdQ-IZ-b0s" kind="relationship" relationship="rootViewController" id="9OA-MY-KWw"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jIY-US-GtG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -84,7 +84,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="4xM-Se-iiC">
-                                <rect key="frame" x="0.0" y="144" width="375" height="668"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="kxb-at-ZWb"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="KVt-dZ-U91"/>
                             </scrollView>
@@ -401,6 +401,34 @@
                                 </stackView>
                             </subviews>
                         </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pHE-yU-ivZ" userLabel="Habit Motivation">
+                            <rect key="frame" x="20" y="545.33333333333337" width="335" height="74"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXC-sp-UJU">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="FKA-bt-1KJ"/>
+                                    </constraints>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Motivation">
+                                            <attributes>
+                                                <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Write Something Motivates You." minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bej-cY-4ol">
+                                    <rect key="frame" x="0.0" y="39" width="335" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="50e-61-Zft"/>
+                                    </constraints>
+                                    <attributedString key="attributedText"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
@@ -412,13 +440,16 @@
                         <constraint firstItem="20B-XU-DOh" firstAttribute="top" secondItem="wvJ-Jd-Wud" secondAttribute="bottom" constant="20" id="GFA-5V-Dtf"/>
                         <constraint firstItem="39h-SU-qrN" firstAttribute="leading" secondItem="LMJ-6a-qPt" secondAttribute="leading" constant="20" symbolic="YES" id="Ibh-zM-Zz6"/>
                         <constraint firstAttribute="trailing" secondItem="Z1v-A5-Go9" secondAttribute="trailing" constant="20" symbolic="YES" id="KcC-sc-y0M"/>
+                        <constraint firstItem="pHE-yU-ivZ" firstAttribute="leading" secondItem="j4D-bp-F9R" secondAttribute="leading" constant="20" id="RW4-f5-vXO"/>
                         <constraint firstItem="39h-SU-qrN" firstAttribute="top" secondItem="Z1v-A5-Go9" secondAttribute="bottom" constant="20" id="TzB-g0-mB1"/>
                         <constraint firstItem="wvJ-Jd-Wud" firstAttribute="leading" secondItem="LMJ-6a-qPt" secondAttribute="leading" constant="20" symbolic="YES" id="Z5j-uO-bFj"/>
                         <constraint firstAttribute="trailing" secondItem="wvJ-Jd-Wud" secondAttribute="trailing" constant="20" symbolic="YES" id="dlm-bd-lv7"/>
                         <constraint firstAttribute="trailing" secondItem="20B-XU-DOh" secondAttribute="trailing" constant="20" symbolic="YES" id="eYh-6Z-Rhy"/>
                         <constraint firstItem="Z1v-A5-Go9" firstAttribute="leading" secondItem="LMJ-6a-qPt" secondAttribute="leading" constant="20" symbolic="YES" id="eZD-vI-Ctg"/>
                         <constraint firstAttribute="trailing" secondItem="i9f-Gk-F7d" secondAttribute="trailing" constant="20" symbolic="YES" id="svd-cp-aVE"/>
+                        <constraint firstItem="j4D-bp-F9R" firstAttribute="trailing" secondItem="pHE-yU-ivZ" secondAttribute="trailing" constant="20" id="w2V-sW-4Tq"/>
                         <constraint firstItem="20B-XU-DOh" firstAttribute="leading" secondItem="LMJ-6a-qPt" secondAttribute="leading" constant="20" symbolic="YES" id="zPr-PJ-3AD"/>
+                        <constraint firstItem="pHE-yU-ivZ" firstAttribute="top" secondItem="i9f-Gk-F7d" secondAttribute="bottom" constant="20" id="zR0-Qb-BY4"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="j4D-bp-F9R"/>
                 </view>
@@ -445,16 +476,16 @@
         <scene sceneID="fri-jM-es4">
             <objects>
                 <tableViewController storyboardIdentifier="HabitsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tdQ-IZ-b0s" customClass="HabitsViewContoller" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iy3-9Y-lPA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iy3-9Y-lPA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitTableViewCell" id="RDx-fV-IKd">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitTableViewCell" rowHeight="130" id="RDx-fV-IKd">
+                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RDx-fV-IKd" id="VmE-0s-WQ2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -480,7 +511,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQ1-Lo-Vzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4665" y="315"/>
+            <point key="canvasLocation" x="4664.8000000000002" y="314.77832512315274"/>
         </scene>
     </scenes>
     <resources>
