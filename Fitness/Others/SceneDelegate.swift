@@ -8,6 +8,8 @@
 
 import UIKit
 
+import FBSDKCoreKit
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -47,7 +49,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-
+        
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -59,7 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+        PersistanceService.shared.save()
     }
 
 }
