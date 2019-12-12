@@ -52,6 +52,8 @@
 		C5E0A77223946AEB00D160D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0A77123946AEB00D160D9 /* User.swift */; };
 		C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0A77623959BB000D160D9 /* LoginViewController.swift */; };
 		C5E49259239D5DF8008471E5 /* HabitProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E49258239D5DF8008471E5 /* HabitProgressView.swift */; };
+		C5E67F2223A0FFF200815D34 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E67F2123A0FFF200815D34 /* Configuration.swift */; };
+		C5EB78CC23A181670019BD16 /* FATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB78CB23A181670019BD16 /* FATextField.swift */; };
 		C5F6733B2379977400BACBFA /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F6733A2379977400BACBFA /* HabitsViewController.swift */; };
 		C5F6D397237C535600D7C2AF /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F6D396237C535600D7C2AF /* WorkoutViewController.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +108,8 @@
 		C5E0A77123946AEB00D160D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C5E0A77623959BB000D160D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C5E49258239D5DF8008471E5 /* HabitProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressView.swift; sourceTree = "<group>"; };
+		C5E67F2123A0FFF200815D34 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		C5EB78CB23A181670019BD16 /* FATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FATextField.swift; sourceTree = "<group>"; };
 		C5F6733A2379977400BACBFA /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		C5F6D396237C535600D7C2AF /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				C56BE7C12398664100413017 /* FAButton.swift */,
+				C5EB78CB23A181670019BD16 /* FATextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				C564E8622376EAEA00190832 /* AppDelegate.swift */,
 				C564E8642376EAEA00190832 /* SceneDelegate.swift */,
 				C593F40D239829A400BB5575 /* Extenstions.swift */,
+				C5E67F2123A0FFF200815D34 /* Configuration.swift */,
 				C564E8702376EAED00190832 /* LaunchScreen.storyboard */,
 				C5BCAC47239C671C0099A9AE /* Fitness.xcdatamodeld */,
 			);
@@ -490,6 +496,7 @@
 				C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */,
 				C5BCAC49239C671C0099A9AE /* Fitness.xcdatamodeld in Sources */,
 				C5E0A76E239337E200D160D9 /* HabitTableViewCell.swift in Sources */,
+				C5EB78CC23A181670019BD16 /* FATextField.swift in Sources */,
 				C536F76E23801CFA00631ADB /* FHNoHabitsView.swift in Sources */,
 				C536F761237EDF3B00631ADB /* HabitCreationViewController.swift in Sources */,
 				C540F5F723912BE300CD26ED /* Persistable.swift in Sources */,
@@ -516,6 +523,7 @@
 				C5E49259239D5DF8008471E5 /* HabitProgressView.swift in Sources */,
 				C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */,
 				C56F52882396A38600823DA1 /* SignUpViewController.swift in Sources */,
+				C5E67F2223A0FFF200815D34 /* Configuration.swift in Sources */,
 				C5B09B4B2391294500FE5FE3 /* PresistenceService.swift in Sources */,
 				C536F76A237F272000631ADB /* FHDayHabits.swift in Sources */,
 				C5B09B46239075CA00FE5FE3 /* Networkable.swift in Sources */,
