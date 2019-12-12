@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TGa-M9-FCd">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="Habit Det" id="kwr-Ac-3C4" customClass="HabitDetailsViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3OU-ov-LlD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="j7y-hB-i0t"/>
@@ -36,7 +36,7 @@
                     <tabBarItem key="tabBarItem" title="Habits" image="Habits" id="LXn-br-kvA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0T9-Mc-ebu">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -53,11 +53,11 @@
             <objects>
                 <viewController storyboardIdentifier="HabitsCreationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OCs-dc-oy2" customClass="HabitCreationViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6zy-Fo-ZTA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WGk-QV-Nop">
-                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
@@ -84,7 +84,7 @@
                                 </items>
                             </navigationBar>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="4xM-Se-iiC">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="690"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="kxb-at-ZWb"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="KVt-dZ-U91"/>
                             </scrollView>
@@ -126,14 +126,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FN5-0J-qUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="690" id="LMJ-6a-qPt">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Z1v-A5-Go9" userLabel="Habit Type">
-                            <rect key="frame" x="20" y="20" width="335" height="70"/>
+                            <rect key="frame" x="20" y="20" width="280" height="70"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sx-Bc-lqo">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="31"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="31"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Build or Quit this habit?">
                                             <attributes>
@@ -144,7 +144,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B50-dL-Ggq">
-                                    <rect key="frame" x="0.0" y="39" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="39" width="280" height="32"/>
                                     <segments>
                                         <segment title="Build"/>
                                         <segment title="Quit"/>
@@ -157,10 +157,10 @@
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="39h-SU-qrN" userLabel="Habit Name">
-                            <rect key="frame" x="20" y="110.00000000000001" width="335" height="138.33333333333337"/>
+                            <rect key="frame" x="20" y="110" width="280" height="138.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8S3-JX-Obd">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="20.333333333333332"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Habit Name:">
                                             <attributes>
@@ -171,13 +171,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What would you like to start doing?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3j-dT-hQO">
-                                    <rect key="frame" x="0.0" y="28.333333333333343" width="335" height="17"/>
+                                    <rect key="frame" x="0.0" y="28.5" width="280" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Read More Books, Quit Smoking..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JwO-Fl-H7U">
-                                    <rect key="frame" x="0.0" y="53.333333333333343" width="335" height="45"/>
+                                    <rect key="frame" x="0.0" y="53.5" width="280" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="oG0-JV-jZC"/>
                                     </constraints>
@@ -185,7 +185,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10c-LK-7I1" customClass="FHIdeasButton" customModule="Fitness" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="106.33333333333334" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="106.5" width="280" height="32"/>
                                     <color key="backgroundColor" name="DMBlack"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="32" id="iEO-OF-SEk"/>
@@ -214,10 +214,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wvJ-Jd-Wud" userLabel="Goal Period">
-                            <rect key="frame" x="20" y="268.33333333333331" width="335" height="72"/>
+                            <rect key="frame" x="20" y="268.5" width="280" height="72"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLg-Xh-DqM">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="32"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Goal Period:">
                                             <attributes>
@@ -229,7 +229,7 @@
                                     <color key="highlightedColor" name="White_DarkMode"/>
                                 </label>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1jW-la-qFX">
-                                    <rect key="frame" x="0.0" y="40" width="335" height="33"/>
+                                    <rect key="frame" x="0.0" y="40" width="280" height="33"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="32" id="0mb-f5-Jat"/>
                                     </constraints>
@@ -246,10 +246,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="20B-XU-DOh" userLabel="Goal Frequency">
-                            <rect key="frame" x="20" y="360.33333333333331" width="335" height="72"/>
+                            <rect key="frame" x="20" y="360.5" width="280" height="72"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKl-nN-u6N">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="32"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Goal Frequency:">
                                             <attributes>
@@ -261,15 +261,15 @@
                                     <color key="highlightedColor" name="White_DarkMode"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CfN-cl-FVZ">
-                                    <rect key="frame" x="0.0" y="40" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="40" width="280" height="32"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Default Count: 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYH-1c-rie">
-                                            <rect key="frame" x="0.0" y="0.0" width="233" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="178" height="32"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         </textField>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="2O9-qW-3Yn">
-                                            <rect key="frame" x="241" y="0.0" width="94" height="32"/>
+                                            <rect key="frame" x="186" y="0.0" width="94" height="32"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="Uxe-tS-ctO"/>
                                             </constraints>
@@ -282,10 +282,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="i9f-Gk-F7d" userLabel="Goal Days">
-                            <rect key="frame" x="20" y="452.33333333333331" width="335" height="72.999999999999943"/>
+                            <rect key="frame" x="20" y="452.5" width="280" height="73"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwU-FU-vRx">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="32"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Track Goals on Which Days:">
                                             <attributes>
@@ -297,10 +297,10 @@
                                     <color key="highlightedColor" name="White_DarkMode"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J8N-hd-fiD">
-                                    <rect key="frame" x="0.0" y="41" width="335" height="32"/>
+                                    <rect key="frame" x="0.0" y="41" width="280" height="32"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz3-qI-jfm" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="41" height="32"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="33" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="1gj-kY-GPc"/>
@@ -314,7 +314,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvN-cK-bY3" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
-                                            <rect key="frame" x="49" y="0.0" width="41" height="32"/>
+                                            <rect key="frame" x="41" y="0.0" width="33.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="WBA-xH-nga"/>
@@ -328,7 +328,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4h4-hy-HiM" userLabel="Wed" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
-                                            <rect key="frame" x="98" y="0.0" width="41" height="32"/>
+                                            <rect key="frame" x="82.5" y="0.0" width="33" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="IUJ-Me-EyD"/>
@@ -342,7 +342,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-5p-fiR" userLabel="Thur" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
-                                            <rect key="frame" x="147" y="0.0" width="41" height="32"/>
+                                            <rect key="frame" x="123.5" y="0.0" width="33" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="lGq-wy-diV"/>
@@ -356,7 +356,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1d-w6-Opz" userLabel="Fri" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
-                                            <rect key="frame" x="196" y="0.0" width="41" height="32"/>
+                                            <rect key="frame" x="164.5" y="0.0" width="33" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="Bw5-7V-SmF"/>
@@ -370,7 +370,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu8-pz-3Jg" userLabel="Sat" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
-                                            <rect key="frame" x="245" y="0.0" width="41" height="32"/>
+                                            <rect key="frame" x="205.5" y="0.0" width="33.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="TCs-5k-Ljq"/>
@@ -384,7 +384,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iML-ka-BI0" userLabel="Sun" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
-                                            <rect key="frame" x="294" y="0.0" width="41" height="32"/>
+                                            <rect key="frame" x="247" y="0.0" width="33" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="2RH-nH-7dC"/>
@@ -402,10 +402,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pHE-yU-ivZ" userLabel="Habit Motivation">
-                            <rect key="frame" x="20" y="545.33333333333337" width="335" height="74"/>
+                            <rect key="frame" x="20" y="545.5" width="280" height="74"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXC-sp-UJU">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="31"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="31"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="31" id="FKA-bt-1KJ"/>
                                     </constraints>
@@ -420,7 +420,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Write Something Motivates You." minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="bej-cY-4ol">
-                                    <rect key="frame" x="0.0" y="39" width="335" height="35"/>
+                                    <rect key="frame" x="0.0" y="39" width="280" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="50e-61-Zft"/>
                                     </constraints>
@@ -454,14 +454,14 @@
                     <viewLayoutGuide key="safeArea" id="j4D-bp-F9R"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="4664.8000000000002" y="2205.6650246305421"/>
+            <point key="canvasLocation" x="4663.125" y="2205.6338028169016"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="voL-X3-Znn">
             <objects>
                 <viewController id="XaE-mH-mlW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ExA-ft-mNO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="EfP-vo-GQT"/>
@@ -476,16 +476,16 @@
         <scene sceneID="fri-jM-es4">
             <objects>
                 <tableViewController storyboardIdentifier="HabitsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tdQ-IZ-b0s" customClass="HabitsViewContoller" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iy3-9Y-lPA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iy3-9Y-lPA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitTableViewCell" rowHeight="130" id="RDx-fV-IKd">
-                                <rect key="frame" x="0.0" y="28" width="375" height="130"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitTableViewCell" rowHeight="100" id="RDx-fV-IKd">
+                                <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RDx-fV-IKd" id="VmE-0s-WQ2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -511,7 +511,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQ1-Lo-Vzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4664.8000000000002" y="314.77832512315274"/>
+            <point key="canvasLocation" x="4663.125" y="313.73239436619718"/>
         </scene>
     </scenes>
     <resources>

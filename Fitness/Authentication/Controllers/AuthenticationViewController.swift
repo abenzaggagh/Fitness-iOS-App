@@ -7,4 +7,8 @@ class AuthentificationViewController: UIViewController {
         
     }
     
+    @IBAction func onBoardSeen(_ sender: FAButton) {
+        UserDefaults.standard.set(true, forKey: "isSeen")
+    }
+    
 }

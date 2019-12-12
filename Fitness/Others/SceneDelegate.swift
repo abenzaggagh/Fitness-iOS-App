@@ -35,9 +35,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             
             let authenticationStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
-            let initialViewController = authenticationStoryboard.instantiateViewController(withIdentifier: "Authentication")
             
-            window?.rootViewController = initialViewController
+            let isSeen = UserDefaults.standard.bool(forKey: "isSeen")
+            
+            let initialViewController: UIViewController
+            
+            if isSeen == true {
+               initialViewController = authenticationStoryboard.instantiateViewController(withIdentifier: "Login")
+               window?.rootViewController = initialViewController
+            } else {
+                initialViewController = authenticationStoryboard.instantiateViewController(withIdentifier: "Authentication")
+                window?.rootViewController = initialViewController
+            }
+            
         }
         
         window?.makeKeyAndVisible()
