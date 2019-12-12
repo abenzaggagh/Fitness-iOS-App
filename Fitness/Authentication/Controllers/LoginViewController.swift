@@ -8,6 +8,9 @@
 
 import UIKit
 
+import FBSDKCoreKit
+import FBSDKLoginKit
+
 class LoginViewController: UIViewController {
     
     @IBOutlet var loadingView: UIView!
@@ -53,12 +56,54 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let backgroundImage = UIImage.init(named: "Background")
+//        let backgroundImageView = UIImageView.init(frame: self.view.frame)
+//
+//        backgroundImageView.image = backgroundImage
+//        backgroundImageView.contentMode = .scaleAspectFill
+//        backgroundImageView.alpha = 0.1
+//        backgroundImageView.with
+//
+//        if !UIAccessibility.isReduceTransparencyEnabled {
+//            view.backgroundColor = .clear
+//
+//            let blurEffect = UIBlurEffect(style: .dark)
+//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//
+//            blurEffectView.frame = backgroundImageView.bounds
+//            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+//            // view.addSubview(blurEffectView)
+//
+//        } /* else {
+//            view.backgroundColor = .black
+//        } */
+
+//        self.view.insertSubview(backgroundImageView, at: 0)
+        
         loadingView.isHidden = true
+        loadingView.layer.cornerRadius = 18
+        
+        let H = self.view.frame.height * 0.4
+        let W = self.view.frame.width * 0.9
+        let X = self.view.bounds.midX - (W/2)
+        let Y = self.view.bounds.midY - (H/2)
+        
+        self.errorMessageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.errorMessageView.frame.height)
+        
+        self.loadingView.isOpaque = false
+        self.loadingView.layer.masksToBounds = true
+        self.loadingView.frame = CGRect(x:X, y: Y, width: W, height: H)
+        self.loadingView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        
+        self.view.addSubview(self.loadingView)
+        
         loginButton.layer.cornerRadius = 12
         twitterButton.layer.cornerRadius = 12
         facebookButton.layer.cornerRadius = 12
         
         self.hideKeyboardWhenTappedAround()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,11 +123,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         
-        let serverPath = "http://35.205.77.228"
-        let authPath = "/api/users/auth/login"
+        /// TODO: Move the Configuration Parameters outside of here
+        let loginPath = API.shared.loginPath
         
         if let email = emailTextField.text, !email.isEmpty {
             if let password = passwordTextField.text, password.count > 7 {
+                
+                DispatchQueue.main.async {
+                    self.loadingView.isHidden = false
+                }
                 
                 let userCredentials = [
                     "email": email,
@@ -91,7 +140,7 @@ class LoginViewController: UIViewController {
                 
                 let session = URLSession.shared
                 
-                let url = URL(string: serverPath+authPath)!
+                let url = URL(string: loginPath)!
                 
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
@@ -118,6 +167,7 @@ class LoginViewController: UIViewController {
                                     UserDefaults.standard.set(token, forKey: "token")
                                     
                                     DispatchQueue.main.async {
+                                        
                                         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                                         guard let initialViewController = mainStoryboard.instantiateInitialViewController() else { return }
 
@@ -130,6 +180,7 @@ class LoginViewController: UIViewController {
                                     
                                     DispatchQueue.main.async {
                                         
+                                        self.loadingView.isHidden = true
                                         self.errorMessageView.isHidden = false
                                         
                                         if let message = serverResponse?["message"] as? String {
@@ -159,21 +210,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginWithFacebook(_ sender: UIButton) {
-        errorMessageView.isHidden = true
-        
-        UserDefaults.standard.set(true, forKey: "isLogin")
-
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let initialViewController = mainStoryboard.instantiateInitialViewController() else { return }
-
-        initialViewController.modalPresentationStyle = .fullScreen
-
-        self.present(initialViewController, animated: true, completion: nil)
         
     }
     
     @IBAction func loginWithTwitter(_ sender: UIButton) {
-        errorMessageView.isHidden = true
         
     }
     

@@ -29,5 +29,8 @@ class ForgotPasswordViewController: UIViewController {
 
     }
 
-
+    @IBAction func restPassword(_ sender: UIButton) {
+         
+    }
+    
 }
