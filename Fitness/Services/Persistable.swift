@@ -12,7 +12,7 @@ import CoreData
 protocol Persistable {
     
     var context: NSManagedObjectContext { get }
-    var persistentContainer: NSPersistentContainer { get }
+    var container: NSPersistentContainer { get }
     
     func save()
     

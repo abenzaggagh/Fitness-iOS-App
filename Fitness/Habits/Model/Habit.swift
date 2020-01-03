@@ -6,7 +6,10 @@
 //  Copyright © 2019 Amine BEN ZAGGAGH. All rights reserved.
 //
 
+import CoreData
 import Foundation
+
+
 
 enum HabitError: Error {
     
@@ -111,7 +114,26 @@ struct Goal: Codable {
     
 }
 
+protocol Trackable {
+    
+    func markCompleted()
+}
 
-extension Habit {
+let persistance = PersistanceService.shared
+
+extension Habit: Trackable {
+    
+    func markCompleted() {
+        
+        let progress = Progress(entity: Progress.entity(), insertInto: persistance.context)
+        
+        progress.day = Date()
+        
+        self.addToHabitProgress(progress)
+        
+        persistance.save()
+        
+    }
+    
     
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHb-h0-4Lt">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gHb-h0-4Lt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,15 +13,15 @@
             <objects>
                 <viewController storyboardIdentifier="Workout" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M4R-8F-ozH" customClass="WorkoutViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lW1-QU-gik">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyC-c6-Lwh">
-                                <rect key="frame" x="0.0" y="91" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="JN9-MG-OoK">
                                         <segmentedControl key="customView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DHM-8g-Zyy">
-                                            <rect key="frame" x="16" y="6" width="288" height="32"/>
+                                            <rect key="frame" x="20" y="6" width="374" height="32"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Walk"/>
@@ -34,46 +34,68 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfO-mX-I3F">
-                                <rect key="frame" x="16" y="141" width="288" height="368"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiX-Ls-45F">
-                                <rect key="frame" x="100" y="446" width="120" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtF-d4-CtX">
+                                <rect key="frame" x="0.0" y="184" width="414" height="629"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfO-mX-I3F">
+                                        <rect key="frame" x="16" y="8" width="382" height="613"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PiX-Ls-45F">
+                                        <rect key="frame" x="50" y="544" width="314" height="45"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="mKz-QV-KGd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startRunWorkout:" destination="M4R-8F-ozH" eventType="touchUpInside" id="zNY-J8-fBl"/>
+                                            <segue destination="v7X-RD-kcO" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="cCn-JG-Oby"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="mAe-6d-vyp">
+                                        <rect key="frame" x="338" y="29.5" width="42" height="42.5"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="Osy-Zg-Ywh"/>
+                                            <constraint firstAttribute="height" constant="42" id="g8D-dm-840"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ASK-7n-Bks"/>
+                                    <constraint firstAttribute="bottom" secondItem="PiX-Ls-45F" secondAttribute="bottom" constant="40" id="Ccu-7x-K0x"/>
+                                    <constraint firstItem="YfO-mX-I3F" firstAttribute="centerX" secondItem="vtF-d4-CtX" secondAttribute="centerX" id="JdG-L7-VI1"/>
+                                    <constraint firstItem="mAe-6d-vyp" firstAttribute="top" secondItem="vtF-d4-CtX" secondAttribute="top" constant="30" id="Jzd-Kx-GVy"/>
+                                    <constraint firstAttribute="trailing" secondItem="mAe-6d-vyp" secondAttribute="trailing" constant="34" id="MSG-t5-2cy"/>
+                                    <constraint firstItem="YfO-mX-I3F" firstAttribute="top" secondItem="vtF-d4-CtX" secondAttribute="topMargin" id="QaH-vK-UR8"/>
+                                    <constraint firstAttribute="trailing" secondItem="PiX-Ls-45F" secondAttribute="trailing" constant="50" id="Tat-By-xSa"/>
+                                    <constraint firstItem="YfO-mX-I3F" firstAttribute="centerY" secondItem="vtF-d4-CtX" secondAttribute="centerY" id="V27-Db-Lq4"/>
+                                    <constraint firstItem="YfO-mX-I3F" firstAttribute="leading" secondItem="vtF-d4-CtX" secondAttribute="leading" constant="16" id="paD-rT-cX5"/>
+                                    <constraint firstItem="PiX-Ls-45F" firstAttribute="leading" secondItem="vtF-d4-CtX" secondAttribute="leading" constant="50" id="xcz-fR-dyA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="startRunWorkout:" destination="M4R-8F-ozH" eventType="touchUpInside" id="zNY-J8-fBl"/>
-                                    <segue destination="v7X-RD-kcO" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="cCn-JG-Oby"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="YfO-mX-I3F" firstAttribute="bottom" secondItem="Jch-yK-fab" secondAttribute="bottom" constant="-10" id="4WY-8a-RGx"/>
-                            <constraint firstItem="YfO-mX-I3F" firstAttribute="leading" secondItem="iyC-c6-Lwh" secondAttribute="leading" constant="16" id="52d-Fr-RUg"/>
+                            <constraint firstItem="vtF-d4-CtX" firstAttribute="bottom" secondItem="Jch-yK-fab" secondAttribute="bottom" id="1YU-wF-XFf"/>
                             <constraint firstItem="iyC-c6-Lwh" firstAttribute="top" secondItem="Jch-yK-fab" secondAttribute="top" id="5QT-L5-QQx"/>
-                            <constraint firstItem="YfO-mX-I3F" firstAttribute="trailing" secondItem="iyC-c6-Lwh" secondAttribute="trailing" constant="-16" id="CTw-Iu-gJg"/>
-                            <constraint firstItem="PiX-Ls-45F" firstAttribute="leading" secondItem="Jch-yK-fab" secondAttribute="leading" constant="100" id="F76-x3-yHb"/>
+                            <constraint firstItem="vtF-d4-CtX" firstAttribute="top" secondItem="iyC-c6-Lwh" secondAttribute="bottom" symbolic="YES" id="6OW-gW-6Oj"/>
+                            <constraint firstItem="vtF-d4-CtX" firstAttribute="leading" secondItem="Jch-yK-fab" secondAttribute="leading" id="DCY-xg-N6s"/>
                             <constraint firstItem="iyC-c6-Lwh" firstAttribute="leading" secondItem="Jch-yK-fab" secondAttribute="leading" id="WNM-it-1w2"/>
-                            <constraint firstItem="Jch-yK-fab" firstAttribute="bottom" secondItem="PiX-Ls-45F" secondAttribute="bottom" constant="33" id="Z08-3q-vWz"/>
-                            <constraint firstItem="PiX-Ls-45F" firstAttribute="centerX" secondItem="YfO-mX-I3F" secondAttribute="centerX" id="ZoP-8c-nsC"/>
                             <constraint firstItem="iyC-c6-Lwh" firstAttribute="centerX" secondItem="lW1-QU-gik" secondAttribute="centerX" id="aPf-jP-Mdl"/>
-                            <constraint firstItem="YfO-mX-I3F" firstAttribute="top" secondItem="iyC-c6-Lwh" secondAttribute="bottom" constant="6" id="ecH-z4-lgA"/>
+                            <constraint firstItem="vtF-d4-CtX" firstAttribute="trailing" secondItem="Jch-yK-fab" secondAttribute="trailing" id="pGo-OL-9mf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jch-yK-fab"/>
                     </view>
                     <navigationItem key="navigationItem" title="Workout" leftItemsSupplementBackButton="YES" id="01O-Yw-Nqu">
                         <barButtonItem key="leftBarButtonItem" title="History" style="done" id="f5h-29-GL0">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="PEn-Ye-hsS">
-                                <rect key="frame" x="16" y="7" width="71" height="30"/>
+                                <rect key="frame" x="20" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
@@ -99,6 +121,7 @@
                         <outlet property="workoutRunMap" destination="YfO-mX-I3F" id="KQ6-rb-JdR"/>
                         <outlet property="workoutSegmentedControl" destination="DHM-8g-Zyy" id="SVB-UZ-mL1"/>
                         <outlet property="workoutToolbar" destination="iyC-c6-Lwh" id="P5S-5G-M1S"/>
+                        <outlet property="workoutWeatherView" destination="mAe-6d-vyp" id="aB7-Ki-yhA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vnm-De-FPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -110,7 +133,7 @@
             <objects>
                 <viewController id="vpp-Kv-hIX" customClass="HistoryViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Gy-oI-aum">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="SaO-ki-gdV"/>
@@ -135,7 +158,7 @@
             <objects>
                 <viewController id="v7X-RD-kcO" customClass="RunViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JY7-Ul-vsE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUz-9k-tll">
@@ -146,15 +169,23 @@
                                     <action selector="endRunWorkoutButton:" destination="v7X-RD-kcO" eventType="touchUpInside" id="F8k-sl-eeE"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DoC-bK-luu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Uad-JP-xPc"/>
                     </view>
                     <navigationItem key="navigationItem" id="oLq-eg-ptS"/>
+                    <connections>
+                        <outlet property="gettingStartedView" destination="DoC-bK-luu" id="Oih-TR-u9R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3lr-pg-NNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5304" y="210"/>
+            <point key="canvasLocation" x="5302.5" y="209.1549295774648"/>
         </scene>
         <!--Workout-->
         <scene sceneID="T7V-4R-xnK">
@@ -164,7 +195,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="OHj-uK-udq" customClass="WorkoutNavigationBar" customModule="Fitness" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -179,6 +210,7 @@
     </scenes>
     <resources>
         <image name="Workout" width="30" height="30"/>
+        <image name="sun.max.fill" catalog="system" width="64" height="62"/>
         <namedColor name="DMWhite">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

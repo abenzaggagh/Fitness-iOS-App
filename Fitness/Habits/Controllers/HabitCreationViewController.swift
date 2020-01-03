@@ -8,9 +8,10 @@
 
 import UIKit
 
-// HabitCreationViewController
-// View Controller for New Habit Creation
-// Modal View Controller
+/// Habit Creation View Controller
+/// View Controller for New Habit Creation
+/// Modal View Controller
+// TODO: Fix the Empty Habit Name Crashing the App
 class HabitCreationViewController: UIViewController {
     
     @IBOutlet weak var newHabitScrollView: UIScrollView!
@@ -71,24 +72,33 @@ class HabitCreationViewController: UIViewController {
         
         let habit = Habit(entity: Habit.entity(), insertInto: persistance.context)
         
-        if habitNameTextField.text != nil, !habitNameTextField.text!.isEmpty {
+        if habitNameTextField.text != nil {
             
-            habit.name = habitNameTextField.text
-            habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)?.description
-            habit.goalPeriod = GoalPeriod(rawValue: goalPeriodSegementedControl.selectedSegmentIndex)?.description
-            habit.goalFrequency = Int32(goalFrequencyStepper.value)
+            if habitNameTextField.text!.isEmpty {
+                
+                habitNameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 2.0, revert: true)
             
-            habit.startDate = Date()
-            
-            habit.currentStreak = 0
-            habit.longestStreak = 0
-            
-            persistance.save()
-            
-            self.dismiss(animated: true, completion: nil)
-            
-        } else {
-            habitNameTextField.isError(baseColor: UIColor.red.cgColor, numberOfShakes: 2.0, revert: true)
+            } else {
+                
+                habit.name = habitNameTextField.text
+                
+                habit.type = Type(rawValue: habitTypeSegmentedControl.selectedSegmentIndex)?.description
+                
+                habit.goalPeriod = GoalPeriod(rawValue: goalPeriodSegementedControl.selectedSegmentIndex)?.description
+                
+                habit.goalFrequency = Int32(goalFrequencyStepper.value)
+                
+                habit.startDate = Date()
+                
+                habit.currentStreak = 0
+                habit.longestStreak = 0
+                
+                self.dismiss(animated: true, completion: {
+                    self.persistance.save()
+                })
+                
+            }
+        
         }
         
     }
@@ -109,7 +119,10 @@ class HabitCreationViewController: UIViewController {
         
         goalFrequencyStepper.value = 1
         goalFrequencyStepper.minimumValue = 1
-        goalFrequencyStepper.maximumValue = 24
+        goalFrequencyStepper.maximumValue = 100
+        
+        let font = UIFont.systemFont(ofSize: 16)
+        habitTypeSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
         
     }
     

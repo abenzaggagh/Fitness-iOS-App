@@ -17,7 +17,7 @@ class PersistanceService: Persistable {
     
     static let shared = PersistanceService()
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Fitness")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -27,10 +27,10 @@ class PersistanceService: Persistable {
         return container
     }()
     
-    var context: NSManagedObjectContext { return persistentContainer.viewContext }
-
+    var context: NSManagedObjectContext { return container.viewContext }
+    
     func save() {
-        let context = persistentContainer.viewContext
+        let context = container.viewContext
         if context.hasChanges {
             do {
                 try context.save()

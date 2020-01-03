@@ -78,7 +78,7 @@ extension UITextField {
 
 extension UIView {
     
-    func setShadowView(){
+    func setShadowView() {
         layer.masksToBounds = false
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowRadius = 3
@@ -145,6 +145,110 @@ class SegueFromRight: UIStoryboardSegue {
                                 src.present(dst, animated: false, completion: nil)
                                     }
                         )
+    }
+    
+}
+
+
+func isValidEmail(email: String) -> Bool {
+    
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+    let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+    return emailPred.evaluate(with: email)
+    
+}
+
+extension UIImageView {
+    
+    func applyshadowWithCorner(containerView : UIView, cornerRadious: CGFloat) {
+        containerView.clipsToBounds = false
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 1
+        containerView.layer.shadowOffset = CGSize.zero
+        containerView.layer.shadowRadius = 10
+        containerView.layer.cornerRadius = cornerRadious
+        containerView.layer.shadowPath = UIBezierPath(roundedRect: containerView.bounds, cornerRadius: cornerRadious).cgPath
+        self.clipsToBounds = true
+        self.layer.cornerRadius = cornerRadious
+    }
+    
+}
+
+extension Date {
+
+  static func today() -> Date {
+      return Date()
+  }
+
+  func next(_ weekday: Weekday, considerToday: Bool = false) -> Date {
+    return get(.next,
+               weekday,
+               considerToday: considerToday)
+  }
+
+  func previous(_ weekday: Weekday, considerToday: Bool = false) -> Date {
+    return get(.previous,
+               weekday,
+               considerToday: considerToday)
+  }
+
+  func get(_ direction: SearchDirection,
+           _ weekDay: Weekday,
+           considerToday consider: Bool = false) -> Date {
+
+    let dayName = weekDay.rawValue
+
+    let weekdaysName = getWeekDaysInEnglish().map { $0.lowercased() }
+
+    assert(weekdaysName.contains(dayName), "weekday symbol should be in form \(weekdaysName)")
+
+    let searchWeekdayIndex = weekdaysName.firstIndex(of: dayName)! + 1
+
+    let calendar = Calendar(identifier: .gregorian)
+
+    if consider && calendar.component(.weekday, from: self) == searchWeekdayIndex {
+      return self
+    }
+
+    var nextDateComponent = calendar.dateComponents([.hour, .minute, .second], from: self)
+    nextDateComponent.weekday = searchWeekdayIndex
+
+    let date = calendar.nextDate(after: self,
+                                 matching: nextDateComponent,
+                                 matchingPolicy: .nextTime,
+                                 direction: direction.calendarSearchDirection)
+
+    return date!
+  }
+
+}
+
+
+extension Date {
+    
+    func getWeekDaysInEnglish() -> [String] {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale(identifier: "en_US_POSIX")
+        return calendar.weekdaySymbols
+    }
+
+    enum Weekday: String {
+        case monday, tuesday, wednesday, thursday, friday, saturday, sunday
+    }
+
+    enum SearchDirection {
+        case next
+        case previous
+
+        var calendarSearchDirection: Calendar.SearchDirection {
+            switch self {
+            case .next:
+                return .forward
+            case .previous:
+                return .backward
+            }
+        }
     }
     
 }

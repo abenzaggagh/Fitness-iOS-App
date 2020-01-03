@@ -30,9 +30,9 @@ class FAButton: UIButton {
         super.init(coder: coder)
         
         layer.cornerRadius = 12
-        self.showsTouchWhenHighlighted = true
+//        self.showsTouchWhenHighlighted = true
         
-        self.layer.masksToBounds = false
+        self.layer.masksToBounds = true
 
         self.layer.shadowColor = self.backgroundColor?.cgColor;
         self.layer.shadowOpacity = 0.8

@@ -7,10 +7,7 @@
 //
 
 import UIKit
-
-public protocol HabitDelegate {
-    func addHabit(habit newHabit: Habit)
-}
+import CoreData
 
 public protocol HabitCellDelegate {
     func openHabitDetails()
@@ -92,47 +89,112 @@ class HabitsViewContoller: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HabitTableViewCell") as? HabitTableViewCell {
             
             let habit = habits[indexPath.row]
+            
             cell.habit = habit
             
-            cell.habitNameLabel?.text = "\(String(describing: habit.name!))"
-            cell.habitProgressView.progress = 0.5
+            cell.habitNameLabel?.text = habit.name ?? ""
+            cell.streakCount = habit.currentStreak
+            
+            var calendar = Calendar(identifier: .gregorian)
+            calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+            
+            switch habit.goalPeriod! {
+            case "Daily":
+                
+                let startDate = calendar.startOfDay(for: Date())
+                let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+                
+                let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+                todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@",
+                                                      habit, startDate as NSDate, endDate! as NSDate)
+                
+                do {
+                    
+                    let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
+                    
+                    if let todayProgressResult = todayProgressResult {
+                        cell.progressCount = todayProgressResult.count
+                    }
+                    
+                } catch {
+                    print(error)
+                }
+                
+                break
+               
+            case "Weekly":
+                
+                let startDate = calendar.startOfDay(for: Date.today().previous(.monday, considerToday: true))
+                let endDate   = calendar.startOfDay(for: Date.today().next(    .sunday, considerToday: true))
+    
+                let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+                todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@", habit, startDate as NSDate, endDate as NSDate)
+                
+                do {
+                    
+                    let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
+                    
+                    if let todayProgressResult = todayProgressResult {
+                        cell.progressCount = todayProgressResult.count
+                    }
+                    
+                } catch {
+                    print(error)
+                }
+                
+                break
+            case "Monthly":
+                
+                
+                
+                break
+            case "Yearly":
+                
+                break
+            default:
+                break
+            }
             
             return cell
             
         } else {
+            
             let cell = UITableViewCell()
             let habit = habits[indexPath.row]
+            
             cell.textLabel?.text = "\(String(describing: habit.name!))"
+            
             return cell
+            
         }
         
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let habit = habits[indexPath.row]
-        performSegue(withIdentifier: "Habit Details", sender: habit)
+        performSegue(withIdentifier: "Habit Details", sender: habits[indexPath.row])
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Display a confirmation message...
+            
             tableView.beginUpdates()
+            
             let habit = habits[indexPath.row]
             persistance.context.delete(habit)
+            
             habits.remove(at: indexPath.row)
+            
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            
             tableView.endUpdates()
+            
             persistance.save()
         }
     }
     
-}
-
-extension HabitsViewContoller: HabitDelegate {
-
-    func addHabit(habit newHabit: Habit) {
-        habits.append(newHabit)
-        self.tableView.reloadData()
-    }
-
 }

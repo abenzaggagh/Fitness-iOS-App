@@ -10,11 +10,16 @@ import UIKit
 import CoreMotion
 
 class RunViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var gettingStartedView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+            self.gettingStartedView.isHidden = true
+        }
     }
     
     var pedomer = CMPedometer()

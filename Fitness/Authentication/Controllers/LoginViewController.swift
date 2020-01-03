@@ -8,8 +8,6 @@
 
 import UIKit
 
-import FBSDKCoreKit
-import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
@@ -101,6 +99,9 @@ class LoginViewController: UIViewController {
         loginButton.layer.cornerRadius = 12
         twitterButton.layer.cornerRadius = 12
         facebookButton.layer.cornerRadius = 12
+        
+//        facebookButton.setImage(UIImage(named: "Facebook"), for: .normal)
+//        twitterButton.setImage(UIImage(named: "Twitter"), for: .normal)
         
         self.hideKeyboardWhenTappedAround()
         
