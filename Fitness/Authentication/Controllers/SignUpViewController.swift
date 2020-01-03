@@ -36,6 +36,9 @@ class SignUpViewController: UIViewController {
         continueWithTwitter.layer.cornerRadius = 12
         continueWithFacebook.layer.cornerRadius = 12
         
+//        continueWithTwitter.setImage(UIImage(named: "Twitter"), for: .normal)
+//        continueWithFacebook.setImage(UIImage(named: "Facebook"), for: .normal)
+        
         self.hideKeyboardWhenTappedAround()
         
     }
@@ -51,15 +54,112 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    // TIME: Working on Sun 29
+    // TODO: Verify the existing of the email address
+    //       Before to perform segue towards the information pages.
     @IBAction func createAccount(_ sender: UIButton) {
         
         if let email = emailTextField.text, !email.isEmpty {
             
             /// TODO: Verify if no user has already this email address.
             /// TODO: Verify if the lenght of the password is greater than 8
-            /// 
-            if let password = passwordTextField.text, !password.isEmpty {
+                        
+            let verifyExistingEmailPath = API.shared.verifyExistingPath
+            
+            let session = URLSession.shared
+            
+            let url = URL(string: verifyExistingEmailPath)!
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            if isValidEmail(email: email) {
+                
+                let emailArray = ["email": email]
+                
+                let emailJSON = try! JSONSerialization.data(withJSONObject: emailArray, options: [])
+                
+                DispatchQueue.global(qos: .background).async {
+                    
+                    let task = session.uploadTask(with: request, from: emailJSON) { data, response, error in
+                        
+                        if let data = data {
+                            
+                            do {
+                                
+                                let serverResponse = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String:Any]
+                                
+                                if serverResponse != nil, serverResponse?.keys.contains("message") ?? false {
+                                    
+                                    // Use a direct method that convert String into Bool
+                                    let isExiting = serverResponse?["message"] as? String
+                                    
+                                    // User exists already
+                                    if isExiting == "True" {
+                                        
+                                        DispatchQueue.main.async {
+                                            // TODO: Display error message
+                                        }
+                                    
+                                    } else {
+                                        
+                                        DispatchQueue.main.async {
+                                            
+                                            if let password = self.passwordTextField.text, !password.isEmpty {
+                                                
+                                                let authStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
+                                                
+                                                let initialViewController = authStoryboard.instantiateViewController(identifier: "Create Account") as CreateAccountViewController
 
+                                                initialViewController.modalPresentationStyle = .fullScreen
+                                                initialViewController.email = email
+                                                initialViewController.password = password
+                                                
+                                                self.present(initialViewController, animated: true, completion: nil)
+                                                
+                                            }
+                                        }
+                                        
+                                    }
+
+                                }
+                                
+                            } catch let error as NSError {
+                                print(error)
+                            }
+                            
+                        }
+                    }
+                    
+                    task.resume()
+                }
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if let password = passwordTextField.text, !password.isEmpty {
+                
+                if password.count > 9 {
+                    
+                    
+                    
+                } else {
+                    
+                }
+                
             }
         }
         
@@ -67,11 +167,8 @@ class SignUpViewController: UIViewController {
     
 }
 
+    
 
-class GenderPicker: UIPickerView {
-
-
-}
 
 /// TODO: Gender Picker must have the chosing value
 /// TODO: Height & Weight must be overlay
@@ -80,7 +177,11 @@ class GenderPicker: UIPickerView {
 /// TODO: Fix the glitches that occurs while switching between the textfield
 class CreateAccountViewController: UIViewController {
     
-    var birthday:  Date?   = nil /// TODO: Define later either Date or String that must be sent to the server.
+    var email:     String? = nil
+    var password:  String? = nil
+    
+    /// TODO: Define later either Date or String that must be sent to the server.
+    var birthday:  Date?   = nil
     var gender:    String? = nil
     
     var height: (String, String)?
@@ -130,10 +231,10 @@ class CreateAccountViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.genderView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.genderView.frame =   CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.birthdayView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        self.heightView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        self.weightView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.heightView.frame =   CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        self.weightView.frame =   CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         
     }
     
@@ -232,41 +333,97 @@ class CreateAccountViewController: UIViewController {
         
     }
     
+    func getWeight() -> Float {
+        let selectedWeight = self.weightPicker.selectedRow(inComponent: 0)
+        let selectedSubWeight = self.weightPicker.selectedRow(inComponent: 1)
+        let weight = Float(self.weightKgValues[selectedWeight])
+        let subWeight = Float(subWeightKgValues[selectedSubWeight])/10
+        return weight+subWeight
+    }
+    
+    func getHeight() -> Float {
+        let selectedHeight = self.heightPicker.selectedRow(inComponent: 0)
+        let selectedSubHeight = self.heightPicker.selectedRow(inComponent: 1)
+        let height = Float(self.weightKgValues[selectedHeight])
+        let subHeight = Float(subWeightKgValues[selectedSubHeight])/10
+        return height+subHeight
+    }
+    
     @IBAction func confirm(_ sender: UIButton) {
         
         /// TODO: Check if all the textfield are not empty.
         /// TODO: All user inputs must be validated before the URL Querie be sent to the server.
         /// TODO: HTTP Method POST to register the user and generate token access
         
-        if let firstName = firstnameTextField.text, let lastName = lastnameTextField.text {
-            if !firstName.isEmpty, !lastName.isEmpty {
+        let signUpPath = API.shared.signUpPath
+        
+        if let firstName = firstnameTextField.text, let lastName = lastnameTextField.text, let gender = genderTextfield.text, let birthday = birthdayTextField.text, let weight = weightTextField.text  {
+            if !firstName.isEmpty, !lastName.isEmpty, !gender.isEmpty, !birthday.isEmpty, !weight.isEmpty {
+                
+                let userData = [
+                    "firstName": firstName,
+                    "lastName": lastName,
+                    "email": email!,
+                    "password": password!,
+                    "gender": gender,
+                    "birthday": birthday,
+                    "height": getHeight(),
+                    "weight": getWeight()
+                    ] as [String : Any]
+                
+                let session = URLSession.shared
+                
+                let url = URL(string: signUpPath)!
+                
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                request.addValue("application/json", forHTTPHeaderField: "Accept")
+                
+                let userDataJSON = try! JSONSerialization.data(withJSONObject: userData, options: [])
+                
+                DispatchQueue.global(qos: .background).async {
+                        
+                    let task = session.uploadTask(with: request, from: userDataJSON) { data, response, error in
+                        
+                        if let data = data {
+                            
+                            do {
+                                
+                                let serverResponse =  try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String:Any]
+                                
+                                if serverResponse != nil, serverResponse?.keys.contains("token") ?? false {
+                                    
+                                    let token = serverResponse?["token"] as? String
+                                    
+                                    UserDefaults.standard.set(true, forKey: "isLogin")
+                                    UserDefaults.standard.set(token, forKey: "token")
+                                    
+                                    DispatchQueue.main.async {
+                                        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                        guard let initialViewController = mainStoryboard.instantiateInitialViewController() else { return }
+
+                                        initialViewController.modalPresentationStyle = .fullScreen
+
+                                        self.present(initialViewController, animated: true, completion: nil)
+                                    }
+                                    
+                                } else if serverResponse != nil, serverResponse?.keys.contains("message") ?? false {
+                                    
+                                }
+                                
+                            } catch let error as NSError {
+                                print(error)
+                            }
+                            
+                        }
+                        
+                    }
+                        
+                    task.resume()
+                }
                 
             }
-        }
-        
-        let signUpPath = API.shared.loginPath
-        
-        let userData: [String] = []
-        
-        let session = URLSession.shared
-        
-        let url = URL(string: signUpPath)!
-        
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let userDataJSON = try! JSONSerialization.data(withJSONObject: userData, options: [])
-        
-        DispatchQueue.global(qos: .background).async {
-            
-            let task = session.uploadTask(with: request, from: userDataJSON) { data, response, error in
-                
-    
-                
-            }
-            
-            task.resume()
         }
         
     }

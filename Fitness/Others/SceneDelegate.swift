@@ -8,7 +8,6 @@
 
 import UIKit
 
-import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

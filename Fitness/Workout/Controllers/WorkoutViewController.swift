@@ -24,6 +24,8 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
     
+    @IBOutlet weak var workoutWeatherView: UIImageView!
+    
     @IBOutlet weak var workoutToolbar: UIToolbar!
     @IBOutlet weak var workoutSegmentedControl: UISegmentedControl!
     
@@ -37,6 +39,7 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
         
         setupUI()
         setupMapUI()
+        setupWeatherUI()
         setupLocationManager()
         
         walk()
@@ -59,12 +62,14 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func setupWeatherUI() {
-        /*
-        let API = "14e06edc87f19f9be27feae2263a3ada"
-        var latitude = locationManager.location?.coordinate.latitude
-        var longitude = locationManager.location?.coordinate.longitude
-        let url = URL(string: "api.openweathermap.org/data/2.5/weather?lat=\(latitude?.description)&lon=\(longitude?.description)")!
-         */
+        // TODO: Get user's location and update the weather regarding the location
+        // TODO: Add Shadow to ImageView
+//        workoutWeatherView.layer.shadowColor = UIColor.black.cgColor
+//        workoutWeatherView.layer.shadowOffset = CGSize(width: 0, height: 20)
+//        workoutWeatherView.layer.shadowOpacity = 1
+//        workoutWeatherView.applyshadowWithCorner(containerView: workoutWeatherView, cornerRadious: 0.5)
+        
+        
     }
     
     private func setupLocationManager() {

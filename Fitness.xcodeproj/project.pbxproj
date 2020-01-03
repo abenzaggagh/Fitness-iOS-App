@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72FCC922D1096D0535F7D111 /* Pods_Fitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 250621D09425F19DA428DACF /* Pods_Fitness.framework */; };
 		C536F761237EDF3B00631ADB /* HabitCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F760237EDF3B00631ADB /* HabitCreationViewController.swift */; };
 		C536F765237EE22500631ADB /* FHDayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F764237EE22500631ADB /* FHDayButton.swift */; };
 		C536F76A237F272000631ADB /* FHDayHabits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F769237F272000631ADB /* FHDayHabits.swift */; };
@@ -43,6 +42,8 @@
 		C5B09B492391292200FE5FE3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B482391292100FE5FE3 /* NetworkService.swift */; };
 		C5B09B4B2391294500FE5FE3 /* PresistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */; };
 		C5BCAC49239C671C0099A9AE /* Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5BCAC47239C671C0099A9AE /* Fitness.xcdatamodeld */; };
+		C5BE958723BE72A500A342A3 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE958623BE72A500A342A3 /* SimpleButton.swift */; };
+		C5BE958923BE9C0700A342A3 /* HabitMarkCompletedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE958823BE9C0700A342A3 /* HabitMarkCompletedButton.swift */; };
 		C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */; };
 		C5C3A7DC23788C8A00AA773D /* Workout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5C3A7DB23788C8A00AA773D /* Workout.storyboard */; };
 		C5C8012A237DD12200584789 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C80129237DD12200584789 /* HistoryViewController.swift */; };
@@ -51,7 +52,6 @@
 		C5E0A76F239337E200D160D9 /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E0A76D239337E200D160D9 /* HabitTableViewCell.xib */; };
 		C5E0A77223946AEB00D160D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0A77123946AEB00D160D9 /* User.swift */; };
 		C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0A77623959BB000D160D9 /* LoginViewController.swift */; };
-		C5E49259239D5DF8008471E5 /* HabitProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E49258239D5DF8008471E5 /* HabitProgressView.swift */; };
 		C5E67F2223A0FFF200815D34 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E67F2123A0FFF200815D34 /* Configuration.swift */; };
 		C5EB78CC23A181670019BD16 /* FATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB78CB23A181670019BD16 /* FATextField.swift */; };
 		C5F6733B2379977400BACBFA /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F6733A2379977400BACBFA /* HabitsViewController.swift */; };
@@ -59,9 +59,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		09C2FC0C83D43216F6F288F7 /* Pods-Fitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness.debug.xcconfig"; path = "Target Support Files/Pods-Fitness/Pods-Fitness.debug.xcconfig"; sourceTree = "<group>"; };
-		250621D09425F19DA428DACF /* Pods_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77618EA8936A07C04223B2BA /* Pods-Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fitness.release.xcconfig"; path = "Target Support Files/Pods-Fitness/Pods-Fitness.release.xcconfig"; sourceTree = "<group>"; };
 		C536F760237EDF3B00631ADB /* HabitCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreationViewController.swift; sourceTree = "<group>"; };
 		C536F764237EE22500631ADB /* FHDayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHDayButton.swift; sourceTree = "<group>"; };
 		C536F769237F272000631ADB /* FHDayHabits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHDayHabits.swift; sourceTree = "<group>"; };
@@ -99,6 +96,8 @@
 		C5B09B482391292100FE5FE3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresistenceService.swift; sourceTree = "<group>"; };
 		C5BCAC48239C671C0099A9AE /* Fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fitness.xcdatamodel; sourceTree = "<group>"; };
+		C5BE958623BE72A500A342A3 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		C5BE958823BE9C0700A342A3 /* HabitMarkCompletedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitMarkCompletedButton.swift; sourceTree = "<group>"; };
 		C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		C5C3A7DB23788C8A00AA773D /* Workout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Workout.storyboard; sourceTree = "<group>"; };
 		C5C80129237DD12200584789 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +106,6 @@
 		C5E0A76D239337E200D160D9 /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
 		C5E0A77123946AEB00D160D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C5E0A77623959BB000D160D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C5E49258239D5DF8008471E5 /* HabitProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressView.swift; sourceTree = "<group>"; };
 		C5E67F2123A0FFF200815D34 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		C5EB78CB23A181670019BD16 /* FATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FATextField.swift; sourceTree = "<group>"; };
 		C5F6733A2379977400BACBFA /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
@@ -119,30 +117,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72FCC922D1096D0535F7D111 /* Pods_Fitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8E026AEA3C4542784CB8D94A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				09C2FC0C83D43216F6F288F7 /* Pods-Fitness.debug.xcconfig */,
-				77618EA8936A07C04223B2BA /* Pods-Fitness.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		AAC4EB610F7B47D9D3E35D2E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				250621D09425F19DA428DACF /* Pods_Fitness.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C536F762237EE12D00631ADB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,9 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				C576FFA9238DAF6900037446 /* Habit Creation */,
-				C5E49258239D5DF8008471E5 /* HabitProgressView.swift */,
-				C5E0A76C239337E200D160D9 /* HabitTableViewCell.swift */,
-				C5E0A76D239337E200D160D9 /* HabitTableViewCell.xib */,
+				C55AF7BA23BE1024003733CF /* Habit Table Cell MVVM */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,13 +176,21 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C55AF7BA23BE1024003733CF /* Habit Table Cell MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0A76C239337E200D160D9 /* HabitTableViewCell.swift */,
+				C5E0A76D239337E200D160D9 /* HabitTableViewCell.xib */,
+				C5BE958823BE9C0700A342A3 /* HabitMarkCompletedButton.swift */,
+			);
+			path = "Habit Table Cell MVVM";
+			sourceTree = "<group>";
+		};
 		C564E8562376EAEA00190832 = {
 			isa = PBXGroup;
 			children = (
 				C564E8612376EAEA00190832 /* Fitness */,
 				C564E8602376EAEA00190832 /* Products */,
-				8E026AEA3C4542784CB8D94A /* Pods */,
-				AAC4EB610F7B47D9D3E35D2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,6 +236,7 @@
 			children = (
 				C56BE7C12398664100413017 /* FAButton.swift */,
 				C5EB78CB23A181670019BD16 /* FATextField.swift */,
+				C5BE958623BE72A500A342A3 /* SimpleButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,11 +363,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C564E8762376EAED00190832 /* Build configuration list for PBXNativeTarget "Fitness" */;
 			buildPhases = (
-				690F45AAC96DC0D7DA33F761 /* [CP] Check Pods Manifest.lock */,
 				C564E85B2376EAEA00190832 /* Sources */,
 				C564E85C2376EAEA00190832 /* Frameworks */,
 				C564E85D2376EAEA00190832 /* Resources */,
-				6642E9BCF2BEB5DD9B45AF35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -445,48 +430,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		6642E9BCF2BEB5DD9B45AF35 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fitness/Pods-Fitness-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		690F45AAC96DC0D7DA33F761 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Fitness-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C564E85B2376EAEA00190832 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -505,6 +448,7 @@
 				C56BE7C22398664100413017 /* FAButton.swift in Sources */,
 				C576FFA8238DAD1200037446 /* HabitDetailsViewController.swift in Sources */,
 				C5F6D397237C535600D7C2AF /* WorkoutViewController.swift in Sources */,
+				C5BE958923BE9C0700A342A3 /* HabitMarkCompletedButton.swift in Sources */,
 				C59694CD238C8EAB0079761F /* Habit.swift in Sources */,
 				C5C8012C237DD78E00584789 /* RunViewController.swift in Sources */,
 				C5C8012A237DD12200584789 /* HistoryViewController.swift in Sources */,
@@ -518,9 +462,9 @@
 				C593F40E239829A400BB5575 /* Extenstions.swift in Sources */,
 				C536F76C2380074B00631ADB /* FHColorButton.swift in Sources */,
 				C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */,
+				C5BE958723BE72A500A342A3 /* SimpleButton.swift in Sources */,
 				C564E8652376EAEA00190832 /* SceneDelegate.swift in Sources */,
 				C576FFAB238DAF9E00037446 /* FHTypeView.swift in Sources */,
-				C5E49259239D5DF8008471E5 /* HabitProgressView.swift in Sources */,
 				C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */,
 				C56F52882396A38600823DA1 /* SignUpViewController.swift in Sources */,
 				C5E67F2223A0FFF200815D34 /* Configuration.swift in Sources */,
@@ -670,12 +614,11 @@
 		};
 		C564E8772376EAED00190832 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09C2FC0C83D43216F6F288F7 /* Pods-Fitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8H7DB9S65T;
 				INFOPLIST_FILE = Fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -683,14 +626,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"z\"",
-					"-framework",
-					"\"FBSDKCoreKit\"",
-					"-framework",
-					"\"FBSDKLoginKit\"",
 					"-weak_framework",
 					"\"Accounts\"",
 					"-weak_framework",
@@ -721,12 +660,11 @@
 		};
 		C564E8782376EAED00190832 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77618EA8936A07C04223B2BA /* Pods-Fitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 8H7DB9S65T;
 				INFOPLIST_FILE = Fitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -734,14 +672,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-l\"z\"",
-					"-framework",
-					"\"FBSDKCoreKit\"",
-					"-framework",
-					"\"FBSDKLoginKit\"",
 					"-weak_framework",
 					"\"Accounts\"",
 					"-weak_framework",
