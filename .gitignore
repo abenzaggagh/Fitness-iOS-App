@@ -3,3 +3,4 @@ Fitness.xcodeproj/xcuserdata/
 Podfile.lock
 Pods/
 .DS_Store
+.gitignore

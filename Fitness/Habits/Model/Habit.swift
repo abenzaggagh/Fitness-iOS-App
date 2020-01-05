@@ -9,8 +9,6 @@
 import CoreData
 import Foundation
 
-
-
 enum HabitError: Error {
     
 }
@@ -116,24 +114,263 @@ struct Goal: Codable {
 
 protocol Trackable {
     
+//    func currentStreak() -> Int
+//    func longestStreak() -> Int
+    func undoCompleted()
     func markCompleted()
 }
 
 let persistance = PersistanceService.shared
 
 extension Habit: Trackable {
+        
+    // TODO: Calculate the Longest Streak
+    // TODO: Calculate the Current Streak and not only count the # of Progress
     
-    func markCompleted() {
+    func previousCompleted() -> Bool {
         
-        let progress = Progress(entity: Progress.entity(), insertInto: persistance.context)
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
         
-        progress.day = Date()
+        switch self.goalPeriod! {
+        case "Daily":
+            
+            let startDate = Date.yesterday
+            let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+            
+            let yesterdayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+            yesterdayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@", self, startDate as NSDate, endDate! as NSDate)
+            
+            do {
+                
+                let yesterdayProgressResult = try persistance.context.fetch(yesterdayProgress) as? [Progress]
+                
+                if let yesterdayProgressResult = yesterdayProgressResult {
+                    if yesterdayProgressResult.count >= self.goalFrequency {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+                
+            } catch {
+                print(error)
+            }
+            
+        case "Weekly":
+            
+            return false
+        case "Monthly":
+            
+            return false
+        case "Yearly":
+            
+            return false
+        default:
+            return false
+        }
         
-        self.addToHabitProgress(progress)
+        return false
+        
+    }
+    
+    func currentGoal() -> Int {
+        
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        
+        switch self.goalPeriod! {
+        case "Daily":
+            
+            let startDate = calendar.startOfDay(for: Date())
+            let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+
+            let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+            todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@", self, startDate as NSDate, endDate! as NSDate)
+            
+            do {
+                
+                let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
+                if let todayProgressResult = todayProgressResult {
+                    return todayProgressResult.count
+                }
+                
+            } catch {
+                print(error)
+            }
+            
+            break
+        case "Weekly":
+            
+            return 0
+        case "Monthly":
+            
+            return 0
+        case "Yearly":
+            
+            return 0
+        default:
+            return 0
+        }
+        
+        return 0
+    }
+    
+    func currentProgress() -> [Progress]? {
+        
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        
+        if let goalPeriod = self.goalPeriod {
+            if goalPeriod == "Daily" {
+                
+                let startDate = calendar.startOfDay(for: Date())
+                let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+
+                let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+                todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@", self, startDate as NSDate, endDate! as NSDate)
+                let todayProgressSort = NSSortDescriptor.init(key: "day", ascending: true)
+                todayProgress.sortDescriptors = [todayProgressSort]
+                
+                do {
+                    
+                    let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
+                    
+                    if let todayProgressResult = todayProgressResult {
+                        return todayProgressResult
+                    }
+                    
+                } catch {
+                    print(error)
+                }
+                
+            } else if goalPeriod == "Weekly" {
+                return nil
+            } else if goalPeriod == "Monthly" {
+                return nil
+            } else if goalPeriod == "Yearly" {
+                return nil
+            }
+        }
+        
+        
+        return nil
+    }
+    
+    
+    func undoCompleted() {
+        
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        
+        switch self.goalPeriod! {
+        case "Daily":
+            
+            let startDate = calendar.startOfDay(for: Date())
+            let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+
+            let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+            todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@", self, startDate as NSDate, endDate! as NSDate)
+            let todayProgressSort = NSSortDescriptor.init(key: "day", ascending: true)
+            todayProgress.sortDescriptors = [todayProgressSort]
+            
+            do {
+                
+                let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
+                
+                if let lastProgress = todayProgressResult?.last {
+                    self.removeFromHabitProgress(lastProgress)
+                }
+                
+                
+            } catch {
+                print(error)
+            }
+            
+            break
+        case "Weekly":
+            
+            break
+        case "Monthly":
+            
+            break
+        case "Yearly":
+            
+            break
+        default:
+            break
+        }
         
         persistance.save()
         
     }
     
+    func markCompleted() {
+        
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        
+        let progress = Progress(entity: Progress.entity(), insertInto: persistance.context)
+        progress.day = Date()
+        
+        switch self.goalPeriod! {
+        case "Daily":
+            
+            let startDate = calendar.startOfDay(for: Date())
+            let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+
+            let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+            todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@", self, startDate as NSDate, endDate! as NSDate)
+            
+            do {
+                
+                let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
+                
+                // TODO Change this code to support Streak count corretly
+                if let todayProgressResult = todayProgressResult {
+                    
+                    if todayProgressResult.count+1 < self.goalFrequency {
+                        self.addToHabitProgress(progress)
+                    } else {
+                        self.addToHabitProgress(progress)
+                        
+                        if self.previousCompleted() {
+                            self.currentStreak = self.currentStreak + 1
+                            if self.longestStreak <= self.currentStreak {
+                                self.longestStreak = self.currentStreak
+                            }
+                        } else {
+                            self.currentStreak = 1
+                            if self.longestStreak == 0 {
+                                self.longestStreak = 1
+                            }
+                            // Check and init the longest streak
+                        }
+                        
+                    }
+                
+                    persistance.save()
+                }
+                
+            } catch {
+                print(error)
+            }
+            
+        case "Weekly":
+            
+            break
+        case "Monthly":
+            
+            break
+        case "Yearly":
+            
+            break
+        default:
+            break
+        }
+        
+        persistance.save()
+        
+    }
     
 }

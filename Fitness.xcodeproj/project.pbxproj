@@ -15,6 +15,8 @@
 		C536F77423803C9900631ADB /* FHIdeasButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F77323803C9900631ADB /* FHIdeasButton.swift */; };
 		C540F5F723912BE300CD26ED /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C540F5F623912BE300CD26ED /* Persistable.swift */; };
 		C5483F1E2395A80A003099F3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5483F1D2395A80A003099F3 /* ProfileViewController.swift */; };
+		C554EF2B23C0C2BC00CCFC50 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C554EF2A23C0C2BB00CCFC50 /* Date.swift */; };
+		C559B88623C01EC700261A3E /* HabitProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C559B88523C01EC700261A3E /* HabitProgressView.swift */; };
 		C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564E8622376EAEA00190832 /* AppDelegate.swift */; };
 		C564E8652376EAEA00190832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564E8642376EAEA00190832 /* SceneDelegate.swift */; };
 		C564E8672376EAEA00190832 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564E8662376EAEA00190832 /* MainViewController.swift */; };
@@ -67,6 +69,8 @@
 		C536F77323803C9900631ADB /* FHIdeasButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHIdeasButton.swift; sourceTree = "<group>"; };
 		C540F5F623912BE300CD26ED /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 		C5483F1D2395A80A003099F3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C554EF2A23C0C2BB00CCFC50 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C559B88523C01EC700261A3E /* HabitProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressView.swift; sourceTree = "<group>"; };
 		C564E85F2376EAEA00190832 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C564E8622376EAEA00190832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C564E8642376EAEA00190832 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				C576FFA9238DAF6900037446 /* Habit Creation */,
+				C559B88421DAF26F00261A3E /* Habit Progress View MVVM */,
 				C55AF7BA23BE1024003733CF /* Habit Table Cell MVVM */,
 			);
 			path = View;
@@ -174,6 +179,22 @@
 				C5F6D396237C535600D7C2AF /* WorkoutViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C554EF2923C0C2A900CCFC50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C554EF2A23C0C2BB00CCFC50 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C559B88421DAF26F00261A3E /* Habit Progress View MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				C559B88523C01EC700261A3E /* HabitProgressView.swift */,
+			);
+			path = "Habit Progress View MVVM";
 			sourceTree = "<group>";
 		};
 		C55AF7BA23BE1024003733CF /* Habit Table Cell MVVM */ = {
@@ -317,6 +338,7 @@
 		C5C3A7DA23788B2200AA773D /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				C554EF2923C0C2A900CCFC50 /* Extensions */,
 				C564E8622376EAEA00190832 /* AppDelegate.swift */,
 				C564E8642376EAEA00190832 /* SceneDelegate.swift */,
 				C593F40D239829A400BB5575 /* Extenstions.swift */,
@@ -437,6 +459,7 @@
 			files = (
 				C56BE7BF239865E800413017 /* ForgotPasswordViewController.swift in Sources */,
 				C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */,
+				C559B88623C01EC700261A3E /* HabitProgressView.swift in Sources */,
 				C5BCAC49239C671C0099A9AE /* Fitness.xcdatamodeld in Sources */,
 				C5E0A76E239337E200D160D9 /* HabitTableViewCell.swift in Sources */,
 				C5EB78CC23A181670019BD16 /* FATextField.swift in Sources */,
@@ -472,6 +495,7 @@
 				C536F76A237F272000631ADB /* FHDayHabits.swift in Sources */,
 				C5B09B46239075CA00FE5FE3 /* Networkable.swift in Sources */,
 				C5B09B492391292200FE5FE3 /* NetworkService.swift in Sources */,
+				C554EF2B23C0C2BC00CCFC50 /* Date.swift in Sources */,
 				C536F765237EE22500631ADB /* FHDayButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

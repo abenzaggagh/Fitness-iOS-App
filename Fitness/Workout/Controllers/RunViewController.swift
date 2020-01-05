@@ -11,18 +11,41 @@ import CoreMotion
 
 class RunViewController: UIViewController {
     
+//    let durationTimer = Timer()
+    var duration = (0,0,0)
+    
     
     @IBOutlet weak var gettingStartedView: UIView!
     
+    @IBOutlet weak var durationLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // durationTimer.
 
+        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        
         let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
             self.gettingStartedView.isHidden = true
         }
     }
     
-    var pedomer = CMPedometer()
+    @objc func timerAction() {
+        duration.2 += 1
+        if duration.2 == 100 {
+            duration.2 = 0
+            duration.1 += 1
+        }
+        if duration.1 == 60 {
+            duration.1 = 0
+            duration.0 += 1
+        }
+        
+        durationLabel.text = "00:\(duration.0):\(duration.1).\(duration.2)"
+    }
+    
+    var pedometer = CMPedometer()
 
     /*
     // MARK: - Navigation
@@ -40,6 +63,13 @@ class RunViewController: UIViewController {
         // performSegue(withIdentifier: "End Workout", sender: nil)
         // workoutStoryboardpresent()
         self.dismiss(animated: false)
+    }
+    
+    func timeString(from timeInterval: TimeInterval) -> String {
+        let seconds = Int(timeInterval.truncatingRemainder(dividingBy: 60))
+        let minutes = Int(timeInterval.truncatingRemainder(dividingBy: 60 * 60) / 60)
+        let hours = Int(timeInterval / 3600)
+        return String(format: "%.2d:%.2d:%.2d", hours, minutes, seconds)
     }
     
 }

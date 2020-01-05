@@ -21,6 +21,12 @@ class HabitDetailsViewController: UIViewController {
     @IBOutlet weak var habitGoalPeriodLabel: UILabel!
     @IBOutlet weak var habitTypeLabel: UILabel!
     @IBOutlet weak var habitCurrentProgressLabel: UILabel!
+    @IBOutlet weak var habitGoalFrequencyLabel: UILabel!
+    
+    @IBOutlet weak var habitCurrentStreak: UILabel!
+    @IBOutlet weak var habitLongestStreak: UILabel!
+    
+    @IBOutlet weak var habitProgressView: HabitProgressView!
     
     func format(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -33,14 +39,38 @@ class HabitDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        habitProgressView.layer.cornerRadius = 12.0
         
         if let habit = habit {
             
+            print("IS PREV COMP : \(habit.previousCompleted())")
+            
             navigation.title = "\(habit.name!)"
             
-            habitCreationDateLabel.text = "Since \(format(date: habit.startDate!))"
             habitGoalPeriodLabel.text = habit.goalPeriod!
+            habitGoalFrequencyLabel.text = "of \(habit.goalFrequency) completed."
+            habitCreationDateLabel.text = "Since \(format(date: habit.startDate!))"
+            
+            switch habit.goalPeriod! {
+            case "Daily":
+                
+                habitLongestStreak.text = "\(habit.longestStreak) days"
+                habitCurrentStreak.text = "\(habit.currentStreak) days"
+                habitCurrentProgressLabel.text = "\(habit.currentGoal())"
+                
+                break
+            case "Weekly":
+                
+                break
+            case "Monthly":
+                
+                break
+            case "Yearly":
+                
+                break
+            default:
+                break
+            }
             
             // Retreive Habit's Progress
             let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
@@ -51,9 +81,9 @@ class HabitDetailsViewController: UIViewController {
                 let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
                 
                 if let todayProgressResult = todayProgressResult {
-                    for progress in todayProgressResult {
-                        print(progress)
-                    }
+//                    for progress in todayProgressResult {
+//                        print(progress)
+//                    }
                 }
                 
                 
@@ -61,46 +91,29 @@ class HabitDetailsViewController: UIViewController {
                 print(error)
             }
             
-            
-            
-            
-            // NSOrderedSet
-//            if let habitProgress = habit.habitProgress {
-//                let habitProgressArray = habitProgress.array as! [Progress]
-//                for progress in habitProgressArray {
-//                    print(progress.day ?? "No date.")
-//                }
-//            }
-//
-//            var calendar = Calendar(identifier: .gregorian)
-//            calendar.timeZone = TimeZone(secondsFromGMT: 0)!
-//
-//            let startDate = calendar.startOfDay(for: Date())
-//            print("Start Date: \(startDate.description)")
-//            let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
-//            print("End Date: \(endDate!)")
-//
-//            let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
-//            todayProgress.predicate = NSPredicate(format: "day >= %@ AND day <= %@", startDate as NSDate, endDate! as NSDate)
-//
-//            do {
-//                let todayProgressResult = try persistance.context.fetch(todayProgress)
-//
-//                for progress in todayProgressResult {
-//                    print("Today Progress: \(progress)")
-//                }
-//
-//            } catch {
-//
-//            }
-
-
-            
+                     
         }
         
         
 
     }
     
-
+    
+    
+    @IBAction func markComplete(_ sender: UIButton) {
+        if let habit = habit {
+            habit.markCompleted()
+            
+            
+            habitCurrentProgressLabel.text = "\(habit.currentGoal())"
+        }
+    }
+    
+    @IBAction func undoComplete(_ sender: UIButton) {
+        if let habit = habit {
+            habit.undoCompleted()
+            habitCurrentProgressLabel.text = "\(habit.currentGoal())"
+        }
+    }
+    
 }

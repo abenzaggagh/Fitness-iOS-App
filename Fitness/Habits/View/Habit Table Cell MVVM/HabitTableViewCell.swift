@@ -29,6 +29,7 @@ class HabitTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         habitProgressView.layer.cornerRadius = 2.0
+        // TODO: Make the
     }
     
     override func layoutSubviews() {
@@ -45,6 +46,7 @@ class HabitTableViewCell: UITableViewCell {
     }
     
     @IBAction func markCompleted(_ sender: Any) {
+        // Make all variables reactive
         
         if let habit = habit {
             
@@ -52,16 +54,12 @@ class HabitTableViewCell: UITableViewCell {
             
             progressCount = (progressCount ?? 0) + 1
             
-            if (habit.goalFrequency) == Int32(progressCount!) {
-                
-                streakCount! += 1
-                
-                habit.currentStreak = habit.currentStreak + 1
-                
+            if (habit.goalFrequency) == Int32(habit.currentGoal()) {
                 markGoalCompleted.isCompleted()
             }
             
         }
+        // TODO: Move the methods in charge of the streak outside of the controller
         
         configureHabitLabel()
         configureProgressView()
@@ -74,15 +72,16 @@ class HabitTableViewCell: UITableViewCell {
         if let habit = habit {
             let currentProgress = Float(progressCount ?? 0) / Float(habit.goalFrequency)
             habitProgressView.setProgress(currentProgress, animated: true)
+            if currentProgress < 1 {
+                markGoalCompleted.isNotCompleted()
+            } else {
+                markGoalCompleted.isCompleted()
+            }
         }
     }
     
     func configureHabitLabel() {
         if let habit = habit {
-            
-            if (habit.goalFrequency) == Int32(progressCount!) {
-                markGoalCompleted.isCompleted()
-            }
             
             switch habit.goalPeriod! {
             case "Daily":

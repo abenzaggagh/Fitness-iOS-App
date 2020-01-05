@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -27,10 +29,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>FacebookAppID</key>
-	<string>596760574402088</string>
-	<key>FacebookDisplayName</key>
-	<string>Fitness</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
@@ -42,10 +40,6 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Location Always and When In Use Usage Description</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location When In Use Usage Description</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -65,6 +59,12 @@
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Motion Usage Description</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Location When In Use Usage Description</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location Always and When In Use Usage Description</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -73,10 +73,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

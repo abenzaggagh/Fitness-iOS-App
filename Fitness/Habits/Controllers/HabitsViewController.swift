@@ -30,13 +30,14 @@ class HabitsViewContoller: UITableViewController {
         self.tableView.allowsSelectionDuringEditing = false
         
         self.habits = try! persistance.context.fetch(Habit.fetchRequest()) as! [Habit]
-        
+
         self.tableView.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -101,26 +102,20 @@ class HabitsViewContoller: UITableViewController {
             switch habit.goalPeriod! {
             case "Daily":
                 
-                let startDate = calendar.startOfDay(for: Date())
-                let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+//                let startDate = calendar.startOfDay(for: Date())
+//                let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
+//                
+//                let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
+//                todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@",
+//                                                      habit, startDate as NSDate, endDate! as NSDate)
                 
-                let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
-                todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@",
-                                                      habit, startDate as NSDate, endDate! as NSDate)
+                cell.progressCount = habit.currentGoal()
                 
-                do {
-                    
-                    let todayProgressResult = try persistance.context.fetch(todayProgress) as? [Progress]
-                    
-                    if let todayProgressResult = todayProgressResult {
-                        cell.progressCount = todayProgressResult.count
-                    }
-                    
-                } catch {
-                    print(error)
+                if habit.goalFrequency >= habit.currentGoal() {
+                    cell.markGoalCompleted.isCompleted()
+                } else {
+                    cell.markGoalCompleted.isNotCompleted()
                 }
-                
-                break
                
             case "Weekly":
                 
@@ -142,7 +137,6 @@ class HabitsViewContoller: UITableViewController {
                     print(error)
                 }
                 
-                break
             case "Monthly":
                 
                 

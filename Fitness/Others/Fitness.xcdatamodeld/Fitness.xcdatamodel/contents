@@ -14,11 +14,10 @@
     <entity name="Progress" representedClassName="Progress" syncable="YES" codeGenerationType="class">
         <attribute name="day" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="frequency" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="habitID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="progressHabit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Habit" inverseName="habitProgress" inverseEntity="Habit"/>
     </entity>
     <elements>
         <element name="Habit" positionX="-324.8984375" positionY="-73.171875" width="128" height="178"/>
-        <element name="Progress" positionX="13.70703125" positionY="74.71875" width="128" height="103"/>
+        <element name="Progress" positionX="13.70703125" positionY="74.71875" width="128" height="88"/>
     </elements>
 </model>
