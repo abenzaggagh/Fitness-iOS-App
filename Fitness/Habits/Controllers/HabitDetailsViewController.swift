@@ -17,6 +17,9 @@ class HabitDetailsViewController: UIViewController {
 
     @IBOutlet weak var navigation: UINavigationItem!
     
+    @IBOutlet var habitDetailsView: UIView!
+    @IBOutlet weak var habitDetailsScrollView: UIScrollView!
+    
     @IBOutlet weak var habitCreationDateLabel: UILabel!
     @IBOutlet weak var habitGoalPeriodLabel: UILabel!
     @IBOutlet weak var habitTypeLabel: UILabel!
@@ -36,10 +39,26 @@ class HabitDetailsViewController: UIViewController {
         return dateFormatter.string(from: date)
     }
     
+    func setupUI() {
+        habitDetailsScrollView.addSubview(habitDetailsView)
+        habitDetailsScrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        habitDetailsView.topAnchor.constraint(equalTo: habitDetailsScrollView.topAnchor).isActive = true
+        habitDetailsView.leadingAnchor.constraint(equalTo: habitDetailsScrollView.leadingAnchor).isActive = true
+        habitDetailsView.trailingAnchor.constraint(equalTo: habitDetailsScrollView.trailingAnchor).isActive = true
+        habitDetailsView.bottomAnchor.constraint(equalTo: habitDetailsScrollView.bottomAnchor).isActive = true
+        
+        habitDetailsView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        
+        habitProgressView.layer.cornerRadius = 12.0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        habitProgressView.layer.cornerRadius = 12.0
+        setupUI()
+        
+        
         
         if let habit = habit {
             
