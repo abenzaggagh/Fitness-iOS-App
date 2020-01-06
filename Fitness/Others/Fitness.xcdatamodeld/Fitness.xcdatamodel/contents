@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cycle" representedClassName="Cycle" parentEntity="Workout" syncable="YES" codeGenerationType="class"/>
     <entity name="Habit" representedClassName="Habit" syncable="YES" codeGenerationType="class">
         <attribute name="currentStreak" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="goalFrequency" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -16,8 +17,23 @@
         <attribute name="frequency" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="progressHabit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Habit" inverseName="habitProgress" inverseEntity="Habit"/>
     </entity>
+    <entity name="Run" representedClassName="Run" parentEntity="Workout" syncable="YES" codeGenerationType="class"/>
+    <entity name="Walk" representedClassName="Walk" parentEntity="Workout" syncable="YES" codeGenerationType="class">
+        <attribute name="steps" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
+        <attribute name="avgHeartRate" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="avgPace" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
     <elements>
         <element name="Habit" positionX="-324.8984375" positionY="-73.171875" width="128" height="178"/>
         <element name="Progress" positionX="13.70703125" positionY="74.71875" width="128" height="88"/>
+        <element name="Workout" positionX="-314.14453125" positionY="228.12109375" width="128" height="118"/>
+        <element name="Run" positionX="-108.515625" positionY="247.98828125" width="128" height="43"/>
+        <element name="Walk" positionX="-155.62109375" positionY="356.44921875" width="128" height="58"/>
+        <element name="Cycle" positionX="-325.89453125" positionY="375.93359375" width="128" height="43"/>
     </elements>
 </model>

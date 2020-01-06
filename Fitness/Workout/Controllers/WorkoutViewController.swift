@@ -14,12 +14,6 @@ class WorkoutNavigationController: UINavigationController {
 }
 
 
-class WorkoutNavigationBar: UINavigationBar {
-    
-    
-    
-}
-
 class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     
     fileprivate let locationManager: CLLocationManager = CLLocationManager()
@@ -33,6 +27,7 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var startWorkoutButton: UIButton!
     
+    var distanceUnit: String? = "Steps"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +42,15 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func setupUI() {
-        workoutToolbar.clipsToBounds = true
+        
         startWorkoutButton.layer.cornerRadius = 8
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let font = UIFont.systemFont(ofSize: 16)
+        
+        workoutSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: font], for: .normal)
+        
+        workoutToolbar.clipsToBounds = true
     }
     
     private func setupMapUI() {
@@ -97,26 +98,54 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func changeWorkoutSegmentedControl(_ sender: UISegmentedControl) {
         switch workoutSegmentedControl.selectedSegmentIndex {
-            case 0:
-                walk()
-            case 1:
-                run()
-            default:
-                walk()
+        case 0:
+            walk()
+        case 1:
+            run()
+        case 2:
+            cycle()
+        default:
+            walk()
         }
     }
     
     private func walk() {
         workoutRunMap.isHidden = false
+        distanceUnit = "Steps"
     }
     
     private func run() {
         workoutRunMap.isHidden = false
+        distanceUnit = "KM"
     }
     
-    @IBAction func startRunWorkout(_ sender: UIButton) {
+    private func cycle() {
+        distanceUnit = "KM"
+    }
+    
+    
+    // MARK: - Segue
+    @IBAction func startWorkout(_ sender: UIButton) {
         print("Start Workout")
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "Start Workout":
+                if let destinationViewController = segue.destination as? WalkRunCycleViewController {
+                    destinationViewController.modalPresentationStyle = .fullScreen
+                    if let distanceUnit = distanceUnit {
+                        destinationViewController.distanceUnit = distanceUnit
+                    }
+                }
+            default:
+                break
+            }
+        }
+    }
+    
+    
     
 }
 
