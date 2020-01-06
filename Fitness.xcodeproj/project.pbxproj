@@ -48,6 +48,8 @@
 		C5B09B46239075CA00FE5FE3 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B45239075CA00FE5FE3 /* Networkable.swift */; };
 		C5B09B492391292200FE5FE3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B482391292100FE5FE3 /* NetworkService.swift */; };
 		C5B09B4B2391294500FE5FE3 /* PresistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */; };
+		C5BC732E23C38A5100A9F50A /* FWEndWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BC732D23C38A5100A9F50A /* FWEndWorkoutButton.swift */; };
+		C5BC733023C38AD300A9F50A /* FWPauseWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BC732F23C38AD300A9F50A /* FWPauseWorkoutButton.swift */; };
 		C5BCAC49239C671C0099A9AE /* Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5BCAC47239C671C0099A9AE /* Fitness.xcdatamodeld */; };
 		C5BE958723BE72A500A342A3 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE958623BE72A500A342A3 /* SimpleButton.swift */; };
 		C5BE958923BE9C0700A342A3 /* HabitMarkCompletedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE958823BE9C0700A342A3 /* HabitMarkCompletedButton.swift */; };
@@ -109,6 +111,8 @@
 		C5B09B45239075CA00FE5FE3 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
 		C5B09B482391292100FE5FE3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresistenceService.swift; sourceTree = "<group>"; };
+		C5BC732D23C38A5100A9F50A /* FWEndWorkoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWEndWorkoutButton.swift; sourceTree = "<group>"; };
+		C5BC732F23C38AD300A9F50A /* FWPauseWorkoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWPauseWorkoutButton.swift; sourceTree = "<group>"; };
 		C5BCAC48239C671C0099A9AE /* Fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fitness.xcdatamodel; sourceTree = "<group>"; };
 		C5BE958623BE72A500A342A3 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		C5BE958823BE9C0700A342A3 /* HabitMarkCompletedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitMarkCompletedButton.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				C5A5C250237DC5170043F89D /* MapWorkoutView.swift */,
+				C5BC732D23C38A5100A9F50A /* FWEndWorkoutButton.swift */,
+				C5BC732F23C38AD300A9F50A /* FWPauseWorkoutButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56BE7BF239865E800413017 /* ForgotPasswordViewController.swift in Sources */,
+				C5BC733023C38AD300A9F50A /* FWPauseWorkoutButton.swift in Sources */,
 				C5E0A77723959BB000D160D9 /* LoginViewController.swift in Sources */,
 				C532368623C29D80005C49EC /* Cycle.swift in Sources */,
 				C532368023C29D5F005C49EC /* Workout.swift in Sources */,
@@ -502,6 +509,7 @@
 				C536F77423803C9900631ADB /* FHIdeasButton.swift in Sources */,
 				C5A5C251237DC5170043F89D /* MapWorkoutView.swift in Sources */,
 				C576FFAD238EFCB500037446 /* Reminder.swift in Sources */,
+				C5BC732E23C38A5100A9F50A /* FWEndWorkoutButton.swift in Sources */,
 				C593F40E239829A400BB5575 /* Extenstions.swift in Sources */,
 				C536F76C2380074B00631ADB /* FHColorButton.swift in Sources */,
 				C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */,

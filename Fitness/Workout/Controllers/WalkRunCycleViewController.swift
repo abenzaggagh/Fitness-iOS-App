@@ -12,6 +12,8 @@ import CoreMotion
 
 class WalkRunCycleViewController: UIViewController {
     
+    var workoutType: WorkoutType?
+    
     var durationTimer: Timer! = nil
     var statusTimer: Bool? = false
     var duration = (hours: 0, minutes: 0, seconds: 0)
@@ -24,43 +26,85 @@ class WalkRunCycleViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet var walkRunCycleView: UIView!
+    
     @IBOutlet weak var gettingStartedView: UIView!
+    @IBOutlet weak var gettingReadyLabel: UILabel!
+    
+    var gettingReadyCount = 3
     
     @IBOutlet weak var durationLabel: UILabel!
     
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var distanceUnitLabel: UILabel!
+    @IBOutlet weak var mainCountingParameterLabel: UILabel!
+    @IBOutlet weak var mainCountingParameterUnitLabel: UILabel!
     
-    @IBOutlet weak var stepsLabel: UILabel!
-    @IBOutlet weak var caloriesLabel: UILabel!
+    @IBOutlet weak var secondaryCountingParameterTitleLabel: UILabel! // Walk: Distance | Run & Cycle: Steps
+    @IBOutlet weak var secondaryCountingParameterLabel: UILabel!
+    
     @IBOutlet weak var paceLabel: UILabel!
+    @IBOutlet weak var caloriesLabel: UILabel!
+
     
     func getReady() {
+        
+        gettingStartedView.frame = view.frame
+        
         walkRunCycleView.addSubview(gettingStartedView)
-        // TODO:
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            DispatchQueue.main.async {
+                self.gettingReadyLabel.text = "\(self.gettingReadyCount)"
+            }
+            
+            self.gettingReadyCount = self.gettingReadyCount - 1
+            
+            if self.gettingReadyCount == 0 {
+                DispatchQueue.main.async {
+                    let font = UIFont.systemFont(ofSize: 96)
+                    self.gettingReadyLabel.font = font
+                    self.gettingReadyLabel.text = "Ready"
+                }
+            }
+        }
+        
     }
     
     func setupUI() {
-        distanceLabel.text = "0"
+        mainCountingParameterLabel.text = "0"
         durationLabel.text = String(format: "%.2d:%.2d:%.2d", duration.0, duration.1, duration.2)
-        stepsLabel.text = "--°"
+        secondaryCountingParameterLabel.text = "----"
         caloriesLabel.text = "0"
         paceLabel.text = "-'--\""
-        if let distanceUnit = distanceUnit {
-            distanceUnitLabel.text = distanceUnit
+        
+        if let workoutType = workoutType {
+            switch workoutType {
+            case WorkoutType.Walk:
+                walk()
+            case WorkoutType.Run:
+               run()
+            case WorkoutType.Cycle:
+                cycle()
+            }
         }
+        
+        
     }
     
-    func setupPedometer() {
+    func setupWalkPedometer() {
         if CMPedometer.isStepCountingAvailable() {
             pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
                 if let pedometerData = pedometerData {
                     DispatchQueue.main.async {
-                        self.distanceLabel.text = "\(pedometerData.numberOfSteps)"
+                        
+                        self.mainCountingParameterLabel.text = "\(pedometerData.numberOfSteps)"
+                        
                         if pedometerData.currentPace == nil {
                             self.paceLabel.text = "-'--\""
                         } else {
-                            self.paceLabel.text = "\(pedometerData.currentPace!)"
+                            if let currentPace = pedometerData.currentPace {
+                                let intCurrentPace = Int(truncating: currentPace) * 10
+                                let doubleCurrentPace = (Double(truncating: currentPace) - Double(intCurrentPace)) * 100
+                                self.paceLabel.text = String(format: "%.2d'%.2d\"", intCurrentPace, doubleCurrentPace)
+                            }
                         }
                         
                     }
@@ -76,18 +120,21 @@ class WalkRunCycleViewController: UIViewController {
         
         getReady()
         
-        let _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+        
+        
+        let _ = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { timer in
             self.gettingStartedView.isHidden = true
             self.setupUI()
         }
         
         self.durationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(durationCounter), userInfo: nil, repeats: true)
         
-        setupPedometer()
+        setupWalkPedometer()
         
     }
     
     @IBAction func endWorkoutButton(_ sender: UIButton) {
+        // TODO: Change the whole fucking philosophy
         if sender.titleLabel?.text == "Pause" {
             self.durationTimer.invalidate()
             sender.titleLabel?.text = "Resume"
@@ -117,11 +164,25 @@ class WalkRunCycleViewController: UIViewController {
         }
         
     }
-
     
+    func walk() {
+        // Set up the main counter as Steps counter and the second counter as distance counter
+        mainCountingParameterUnitLabel.text = "Steps"
+        
+        secondaryCountingParameterTitleLabel.text = "Distance"
+        
+    }
     
+    func run() {
+        mainCountingParameterUnitLabel.text = "KM"
+        
+        secondaryCountingParameterTitleLabel.text = "Steps"
+    }
     
-    
+    func cycle() {
+        mainCountingParameterUnitLabel.text = "KM"
+        
+    }
   
     
 }

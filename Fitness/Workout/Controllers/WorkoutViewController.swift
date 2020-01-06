@@ -13,6 +13,10 @@ class WorkoutNavigationController: UINavigationController {
     
 }
 
+enum WorkoutType: Int {
+    case Walk = 0, Run, Cycle
+}
+
 
 class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -28,6 +32,8 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var startWorkoutButton: UIButton!
     
     var distanceUnit: String? = "Steps"
+    
+    var workout: WorkoutType? = WorkoutType.Walk
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +118,7 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
     private func walk() {
         workoutRunMap.isHidden = false
         distanceUnit = "Steps"
+        
     }
     
     private func run() {
@@ -137,6 +144,16 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
                     destinationViewController.modalPresentationStyle = .fullScreen
                     if let distanceUnit = distanceUnit {
                         destinationViewController.distanceUnit = distanceUnit
+                        switch workoutSegmentedControl.selectedSegmentIndex {
+                        case 0:
+                            destinationViewController.workoutType = WorkoutType.Walk
+                        case 1:
+                            destinationViewController.workoutType = WorkoutType.Run
+                        case 2:
+                            destinationViewController.workoutType = WorkoutType.Cycle
+                        default:
+                            destinationViewController.workoutType = WorkoutType.Walk
+                        }
                     }
                 }
             default:
