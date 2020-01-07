@@ -102,13 +102,6 @@ class HabitsViewContoller: UITableViewController {
             switch habit.goalPeriod! {
             case "Daily":
                 
-//                let startDate = calendar.startOfDay(for: Date())
-//                let endDate = Calendar.current.date(byAdding: .day, value: 1, to: startDate)
-//                
-//                let todayProgress = NSFetchRequest<NSFetchRequestResult>(entityName: "Progress")
-//                todayProgress.predicate = NSPredicate(format: "progressHabit == %@ AND day >= %@ AND day <= %@",
-//                                                      habit, startDate as NSDate, endDate! as NSDate)
-                
                 cell.progressCount = habit.currentGoal()
                 
                 if habit.goalFrequency >= habit.currentGoal() {

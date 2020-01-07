@@ -9,9 +9,5 @@
 import Foundation
 import CoreMotion
 
-extension Walk {
-    
-    
-    
-    
-}
+
+

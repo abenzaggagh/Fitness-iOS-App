@@ -9,6 +9,4 @@
 import Foundation
 import CoreMotion
 
-extension Cycle {
 
-}

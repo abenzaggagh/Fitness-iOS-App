@@ -8,11 +8,14 @@
 
 import UIKit
 import CoreMotion
+import CoreData
 
 
 class WalkRunCycleViewController: UIViewController {
     
     var workoutType: WorkoutType?
+    
+    var startDate: Date!
     
     var durationTimer: Timer! = nil
     var statusTimer: Bool? = false
@@ -38,11 +41,13 @@ class WalkRunCycleViewController: UIViewController {
     @IBOutlet weak var mainCountingParameterUnitLabel: UILabel!
     
     @IBOutlet weak var secondaryCountingParameterTitleLabel: UILabel! // Walk: Distance | Run & Cycle: Steps
+    @IBOutlet weak var secondaryCountingParameterUnitLabel: UILabel!
     @IBOutlet weak var secondaryCountingParameterLabel: UILabel!
     
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var caloriesLabel: UILabel!
 
+    let persistance = PersistanceService.shared
     
     func getReady() {
         
@@ -65,6 +70,8 @@ class WalkRunCycleViewController: UIViewController {
                 }
             }
         }
+        
+        
         
     }
     
@@ -97,13 +104,17 @@ class WalkRunCycleViewController: UIViewController {
                         
                         self.mainCountingParameterLabel.text = "\(pedometerData.numberOfSteps)"
                         
+                        if pedometerData.distance == nil {
+                            self.secondaryCountingParameterLabel.text = "----"
+                        } else {
+                            self.secondaryCountingParameterLabel.text = "\(Int(truncating: pedometerData.distance!))"
+                        }
+                        
                         if pedometerData.currentPace == nil {
                             self.paceLabel.text = "-'--\""
                         } else {
-                            if let currentPace = pedometerData.currentPace {
-                                let intCurrentPace = Int(truncating: currentPace) * 10
-                                let doubleCurrentPace = (Double(truncating: currentPace) - Double(intCurrentPace)) * 100
-                                self.paceLabel.text = String(format: "%.2d'%.2d\"", intCurrentPace, doubleCurrentPace)
+                            if let currentCadence = pedometerData.currentCadence {
+                                self.paceLabel.text = String(format:"%.02f", Float(truncating: currentCadence))
                             }
                         }
                         
@@ -115,13 +126,17 @@ class WalkRunCycleViewController: UIViewController {
         }
     }
     
+    func setupRunPedometer() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.startDate = Date()
+        
         getReady()
-        
-        
-        
+                
         let _ = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { timer in
             self.gettingStartedView.isHidden = true
             self.setupUI()
@@ -129,7 +144,58 @@ class WalkRunCycleViewController: UIViewController {
         
         self.durationTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(durationCounter), userInfo: nil, repeats: true)
         
-        setupWalkPedometer()
+    }
+    
+    func saveWorkout() {
+        
+        if let workoutType = workoutType {
+            switch workoutType {
+            case WorkoutType.Walk:
+                saveWalk()
+            case WorkoutType.Run:
+                saveRun()
+            case WorkoutType.Cycle:
+                saveCycle()
+            }
+        }
+        
+    }
+    
+    func saveWalk() {
+        
+        let endDate = Date()
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Walk", in: persistance.context)!
+        
+        let walk = Walk(entity: entity, insertInto: persistance.context)
+    
+        pedometer.queryPedometerData(from: startDate!, to: endDate, withHandler: { (pedometerData, error) in
+            if let pedometerData = pedometerData {
+                
+                walk.steps = Int32(truncating: pedometerData.numberOfSteps)
+                
+                walk.startDate = self.startDate!
+                walk.endDate = endDate
+            
+                walk.distance = Float(truncating: pedometerData.distance ?? 0.0)
+                
+//                /walk.avgPace = pedometerData.averageActivePace!.stringValue
+                
+                walk.durationSeconds = Int16(self.duration.seconds)
+                walk.durationMinutes = Int16(self.duration.minutes)
+                walk.durationHours = Int16(self.duration.hours)
+                
+            }
+        })
+        
+        persistance.save()
+    }
+    
+    func saveRun() {
+        
+    }
+    
+    func saveCycle() {
         
     }
     
@@ -137,12 +203,15 @@ class WalkRunCycleViewController: UIViewController {
         // TODO: Change the whole fucking philosophy
         if sender.titleLabel?.text == "Pause" {
             self.durationTimer.invalidate()
+            pedometer.stopUpdates()
             sender.titleLabel?.text = "Resume"
         } else if sender.titleLabel?.text == "Resume" {
             self.durationTimer.fire()
             sender.titleLabel?.text = "Pause"
         } else if sender.titleLabel?.text == "End" {
-            self.dismiss(animated: true)
+            self.dismiss(animated: true) {
+                self.saveWorkout()
+            }
         }
     }
 
@@ -169,7 +238,10 @@ class WalkRunCycleViewController: UIViewController {
         // Set up the main counter as Steps counter and the second counter as distance counter
         mainCountingParameterUnitLabel.text = "Steps"
         
+        secondaryCountingParameterUnitLabel.text = "Meters"
         secondaryCountingParameterTitleLabel.text = "Distance"
+    
+        setupWalkPedometer()
         
     }
     
@@ -177,11 +249,12 @@ class WalkRunCycleViewController: UIViewController {
         mainCountingParameterUnitLabel.text = "KM"
         
         secondaryCountingParameterTitleLabel.text = "Steps"
+        
+        
     }
     
     func cycle() {
         mainCountingParameterUnitLabel.text = "KM"
-        
     }
   
     

@@ -10,7 +10,7 @@ import Foundation
 
 struct API {
     
-    let serverPath: String = "http://localhost:80"
+    let serverPath: String = "http://35.205.77.228:80"
     
     let authPath:   String = "/api/users/auth/"
     

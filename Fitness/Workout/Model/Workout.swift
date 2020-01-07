@@ -9,9 +9,4 @@
 import Foundation
 import CoreMotion
 
-extension Workout {
-    
-    
-    
-    
-}
+

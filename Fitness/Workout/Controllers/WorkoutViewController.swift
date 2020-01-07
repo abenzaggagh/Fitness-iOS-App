@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreData
 
 class WorkoutNavigationController: UINavigationController {
     
@@ -162,7 +163,7 @@ class WorkoutViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
+
     
 }
 

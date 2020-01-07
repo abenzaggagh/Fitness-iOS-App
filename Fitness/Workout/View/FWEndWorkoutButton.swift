@@ -10,6 +10,9 @@ import UIKit
 
 @IBDesignable
 class EndWorkoutButton: UIButton {
+    
+    @IBInspectable var FWShadowRadius: CGFloat = 3.0
+    @IBInspectable var FWShadowOpacity: Float = 0.2
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,8 +30,8 @@ class EndWorkoutButton: UIButton {
         
         self.layer.masksToBounds = true
         
-        self.layer.shadowRadius = 3
-        self.layer.shadowOpacity = 0.2
+        self.layer.shadowRadius = FWShadowRadius
+        self.layer.shadowOpacity = FWShadowOpacity
         self.layer.shadowColor = self.backgroundColor?.cgColor;
         self.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         
