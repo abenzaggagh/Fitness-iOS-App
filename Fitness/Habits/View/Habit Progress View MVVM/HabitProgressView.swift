@@ -39,9 +39,12 @@ class HabitProgressView: UIView {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds
         
+        let backColor = self.backgroundColor?.cgColor
+        let secondBackColor = backColor?.copy(alpha: 0.1)
+        
         gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
-        gradient.colors = [#colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1).cgColor, #colorLiteral(red: 0.2784313725, green: 0.6235294118, blue: 0.2549019608, alpha: 1).cgColor]
+        gradient.colors = [secondBackColor as Any, backColor as Any]
 
         self.layer.insertSublayer(gradient, at: 0)
         

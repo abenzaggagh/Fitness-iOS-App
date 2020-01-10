@@ -12,8 +12,22 @@ class SummaryViewController: UIViewController {
 
     @IBOutlet weak var profileButton: UIBarButtonItem!
     
+    @IBOutlet weak var summaryScrollView: UIScrollView!
+    @IBOutlet var summaryContentView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        summaryScrollView.addSubview(summaryContentView)
+   
+        summaryScrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        summaryContentView.topAnchor.constraint(equalTo: summaryScrollView.topAnchor).isActive = true
+        summaryContentView.leadingAnchor.constraint(equalTo: summaryScrollView.leadingAnchor).isActive = true
+        summaryContentView.trailingAnchor.constraint(equalTo: summaryScrollView.trailingAnchor).isActive = true
+        summaryContentView.bottomAnchor.constraint(equalTo: summaryScrollView.bottomAnchor).isActive = true
+        
+        summaryContentView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
@@ -23,23 +37,7 @@ class SummaryViewController: UIViewController {
         search.searchResultsUpdater = self as? UISearchResultsUpdating
         self.navigationItem.searchController = search
         
-        // TODO: Left Profile Button
-        
-        // TEST DB CONNECTION
-        
-//        let path = "http://localhost:4000/user/5de43169f427e00c06dc505d"
-//
-//        let url = URL(string: path)!
-//
-//        let defaultSession = URLSession(configuration: .default)
-//
-//        let task = defaultSession.dataTask(with: url, completionHandler: { data, response, error in
-//
-//            print(data)
-//
-//        })
-//        task.resume()
-        
+
     }
     
 

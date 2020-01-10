@@ -44,7 +44,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     
     @IBOutlet weak var twitterButton: UIButton!
-    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var facebookButton: FALoadingButton!
     
     override func viewWillAppear(_ animated: Bool) {
         self.view.addSubview(errorMessageView)
@@ -210,12 +210,32 @@ class LoginViewController: UIViewController {
         
     }
     
+    /* @IBInspectable */ var isLoading = false
+    
     @IBAction func loginWithFacebook(_ sender: UIButton) {
-        
+        if let sender = sender as? FALoadingButton {
+            
+            if self.isLoading {
+
+                sender.isLoading = false
+                self.isLoading = false
+            } else {
+                sender.isLoading = true
+                self.isLoading = false
+            }
+            
+            let _ = Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { timer in
+                self.isLoading = false
+            }
+            
+            
+        }
     }
     
+    
+    
     @IBAction func loginWithTwitter(_ sender: UIButton) {
-        
+        facebookButton.isLoading = false
     }
     
 }

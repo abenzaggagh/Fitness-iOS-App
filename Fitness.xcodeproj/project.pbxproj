@@ -17,6 +17,10 @@
 		C536F77423803C9900631ADB /* FHIdeasButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536F77323803C9900631ADB /* FHIdeasButton.swift */; };
 		C540F5F723912BE300CD26ED /* Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C540F5F623912BE300CD26ED /* Persistable.swift */; };
 		C5483F1E2395A80A003099F3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5483F1D2395A80A003099F3 /* ProfileViewController.swift */; };
+		C54A307F23C653A800BBDE19 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54A307E23C653A800BBDE19 /* Colors.swift */; };
+		C54A308223C6540100BBDE19 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54A308123C6540100BBDE19 /* SimpleButton.swift */; };
+		C54A308423C654CB00BBDE19 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54A308323C654CB00BBDE19 /* CustomButton.swift */; };
+		C54A308623C65ACC00BBDE19 /* FALoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54A308523C65ACC00BBDE19 /* FALoadingButton.swift */; };
 		C554EF2B23C0C2BC00CCFC50 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C554EF2A23C0C2BB00CCFC50 /* Date.swift */; };
 		C559B88623C01EC700261A3E /* HabitProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C559B88523C01EC700261A3E /* HabitProgressView.swift */; };
 		C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C564E8622376EAEA00190832 /* AppDelegate.swift */; };
@@ -47,11 +51,11 @@
 		C5B09B4B2391294500FE5FE3 /* PresistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */; };
 		C5BC732E23C38A5100A9F50A /* FWEndWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BC732D23C38A5100A9F50A /* FWEndWorkoutButton.swift */; };
 		C5BC733023C38AD300A9F50A /* FWPauseWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BC732F23C38AD300A9F50A /* FWPauseWorkoutButton.swift */; };
-		C5BE958723BE72A500A342A3 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE958623BE72A500A342A3 /* SimpleButton.swift */; };
 		C5BE958923BE9C0700A342A3 /* HabitMarkCompletedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BE958823BE9C0700A342A3 /* HabitMarkCompletedButton.swift */; };
 		C5C3066123C41C1700B43A66 /* Fitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5C3065F23C41C1700B43A66 /* Fitness.xcdatamodeld */; };
 		C5C3066523C47F9D00B43A66 /* WorkoutWalkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3066323C47F9D00B43A66 /* WorkoutWalkTableViewCell.swift */; };
 		C5C3066623C47F9D00B43A66 /* WorkoutWalkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5C3066423C47F9D00B43A66 /* WorkoutWalkTableViewCell.xib */; };
+		C5C3066923C4B7D700B43A66 /* SleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3066823C4B7D700B43A66 /* SleepViewController.swift */; };
 		C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */; };
 		C5C3A7DC23788C8A00AA773D /* Workout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5C3A7DB23788C8A00AA773D /* Workout.storyboard */; };
 		C5C8012A237DD12200584789 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C80129237DD12200584789 /* HistoryViewController.swift */; };
@@ -80,6 +84,10 @@
 		C536F77323803C9900631ADB /* FHIdeasButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHIdeasButton.swift; sourceTree = "<group>"; };
 		C540F5F623912BE300CD26ED /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 		C5483F1D2395A80A003099F3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C54A307E23C653A800BBDE19 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		C54A308123C6540100BBDE19 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		C54A308323C654CB00BBDE19 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C54A308523C65ACC00BBDE19 /* FALoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FALoadingButton.swift; sourceTree = "<group>"; };
 		C554EF2A23C0C2BB00CCFC50 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C559B88523C01EC700261A3E /* HabitProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitProgressView.swift; sourceTree = "<group>"; };
 		C564E85F2376EAEA00190832 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,11 +120,11 @@
 		C5B09B4A2391294500FE5FE3 /* PresistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresistenceService.swift; sourceTree = "<group>"; };
 		C5BC732D23C38A5100A9F50A /* FWEndWorkoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWEndWorkoutButton.swift; sourceTree = "<group>"; };
 		C5BC732F23C38AD300A9F50A /* FWPauseWorkoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FWPauseWorkoutButton.swift; sourceTree = "<group>"; };
-		C5BE958623BE72A500A342A3 /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		C5BE958823BE9C0700A342A3 /* HabitMarkCompletedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitMarkCompletedButton.swift; sourceTree = "<group>"; };
 		C5C3066023C41C1700B43A66 /* Fitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fitness.xcdatamodel; sourceTree = "<group>"; };
 		C5C3066323C47F9D00B43A66 /* WorkoutWalkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutWalkTableViewCell.swift; sourceTree = "<group>"; };
 		C5C3066423C47F9D00B43A66 /* WorkoutWalkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutWalkTableViewCell.xib; sourceTree = "<group>"; };
+		C5C3066823C4B7D700B43A66 /* SleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepViewController.swift; sourceTree = "<group>"; };
 		C5C3A7D4237857FE00AA773D /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		C5C3A7DB23788C8A00AA773D /* Workout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Workout.storyboard; sourceTree = "<group>"; };
 		C5C80129237DD12200584789 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -204,11 +212,21 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C54A308023C653F100BBDE19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C54A308123C6540100BBDE19 /* SimpleButton.swift */,
+				C54A308323C654CB00BBDE19 /* CustomButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C554EF2923C0C2A900CCFC50 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				C554EF2A23C0C2BB00CCFC50 /* Date.swift */,
 				C532368723C2A590005C49EC /* String.swift */,
+				C54A307E23C653A800BBDE19 /* Colors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,7 +299,7 @@
 			children = (
 				C56BE7C12398664100413017 /* FAButton.swift */,
 				C5EB78CB23A181670019BD16 /* FATextField.swift */,
-				C5BE958623BE72A500A342A3 /* SimpleButton.swift */,
+				C54A308523C65ACC00BBDE19 /* FALoadingButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -330,6 +348,14 @@
 			path = "History Workout Table View Cell";
 			sourceTree = "<group>";
 		};
+		C5C3066723C4B79F00B43A66 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C5C3066823C4B7D700B43A66 /* SleepViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		C5C3A7D62378583400AA773D /* Meals */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +377,7 @@
 		C5C3A7D823788AE400AA773D /* Sleep */ = {
 			isa = PBXGroup;
 			children = (
+				C5C3066723C4B79F00B43A66 /* Controllers */,
 				C58AB5C223789E4200BB3313 /* Sleep.storyboard */,
 			);
 			path = Sleep;
@@ -370,6 +397,7 @@
 		C5C3A7DA23788B2200AA773D /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				C54A308023C653F100BBDE19 /* Views */,
 				C554EF2923C0C2A900CCFC50 /* Extensions */,
 				C564E8622376EAEA00190832 /* AppDelegate.swift */,
 				C564E8642376EAEA00190832 /* SceneDelegate.swift */,
@@ -500,6 +528,7 @@
 				C536F76E23801CFA00631ADB /* FHNoHabitsView.swift in Sources */,
 				C536F761237EDF3B00631ADB /* HabitCreationViewController.swift in Sources */,
 				C540F5F723912BE300CD26ED /* Persistable.swift in Sources */,
+				C54A307F23C653A800BBDE19 /* Colors.swift in Sources */,
 				C564E8672376EAEA00190832 /* MainViewController.swift in Sources */,
 				C532368823C2A590005C49EC /* String.swift in Sources */,
 				C5E0A77223946AEB00D160D9 /* User.swift in Sources */,
@@ -509,11 +538,13 @@
 				C5C3066123C41C1700B43A66 /* Fitness.xcdatamodeld in Sources */,
 				C5BE958923BE9C0700A342A3 /* HabitMarkCompletedButton.swift in Sources */,
 				C59694CD238C8EAB0079761F /* Habit.swift in Sources */,
+				C54A308423C654CB00BBDE19 /* CustomButton.swift in Sources */,
 				C5C8012C237DD78E00584789 /* WalkRunCycleViewController.swift in Sources */,
 				C5C8012A237DD12200584789 /* HistoryViewController.swift in Sources */,
 				C59694CB238C8E110079761F /* Progress.swift in Sources */,
 				C5483F1E2395A80A003099F3 /* ProfileViewController.swift in Sources */,
 				C5F6733B2379977400BACBFA /* HabitsViewController.swift in Sources */,
+				C54A308623C65ACC00BBDE19 /* FALoadingButton.swift in Sources */,
 				C564E87D2376F0B800190832 /* AuthenticationViewController.swift in Sources */,
 				C536F77423803C9900631ADB /* FHIdeasButton.swift in Sources */,
 				C5A5C251237DC5170043F89D /* MapWorkoutView.swift in Sources */,
@@ -522,8 +553,8 @@
 				C593F40E239829A400BB5575 /* Extenstions.swift in Sources */,
 				C536F76C2380074B00631ADB /* FHColorButton.swift in Sources */,
 				C564E8632376EAEA00190832 /* AppDelegate.swift in Sources */,
-				C5BE958723BE72A500A342A3 /* SimpleButton.swift in Sources */,
 				C564E8652376EAEA00190832 /* SceneDelegate.swift in Sources */,
+				C54A308223C6540100BBDE19 /* SimpleButton.swift in Sources */,
 				C576FFAB238DAF9E00037446 /* FHTypeView.swift in Sources */,
 				C5C3066523C47F9D00B43A66 /* WorkoutWalkTableViewCell.swift in Sources */,
 				C5C3A7D5237857FE00AA773D /* SummaryViewController.swift in Sources */,
@@ -534,6 +565,7 @@
 				C5B09B46239075CA00FE5FE3 /* Networkable.swift in Sources */,
 				C5B09B492391292200FE5FE3 /* NetworkService.swift in Sources */,
 				C554EF2B23C0C2BC00CCFC50 /* Date.swift in Sources */,
+				C5C3066923C4B7D700B43A66 /* SleepViewController.swift in Sources */,
 				C536F765237EE22500631ADB /* FHDayButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
