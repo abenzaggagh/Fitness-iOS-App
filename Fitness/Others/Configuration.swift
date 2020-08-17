@@ -10,9 +10,11 @@ import Foundation
 
 struct API {
     
-    let serverPath: String = "http://35.205.77.228:80"
+    let serverPath: String = "http://localhost/"
     
-    let authPath:   String = "/api/users/auth/"
+    let usersPath: String = "api/users"
+    
+    let authPath:   String = "api/users/auth/"
     
     static let shared = API()
     

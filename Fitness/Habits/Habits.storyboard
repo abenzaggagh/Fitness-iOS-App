@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TGa-M9-FCd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TGa-M9-FCd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
         <!--Read More Books-->
         <scene sceneID="j6C-p6-Ew0">
             <objects>
-                <viewController storyboardIdentifier="Habit Det" id="kwr-Ac-3C4" customClass="HabitDetailsViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Habit Det" id="kwr-Ac-3C4" customClass="HabitDetailsViewController" customModule="Habitude" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3OU-ov-LlD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,7 +211,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="naw-t3-oTe">
                                             <rect key="frame" x="0.0" y="88" width="374" height="195"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-Lk-tM1" customClass="HabitProgressView" customModule="Fitness" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-Lk-tM1" customClass="HabitProgressView" customModule="Habitude" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="172"/>
                                                     <color key="backgroundColor" red="0.2784313725" green="0.62352941179999999" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
@@ -311,6 +311,21 @@
             </objects>
             <point key="canvasLocation" x="5543.4782608695659" y="314.73214285714283"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cgD-gd-Sm8">
+            <objects>
+                <viewController id="0cC-Sb-d3f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZuA-L0-xPf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Gql-8a-DzM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooM-bb-Btm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3729" y="-422"/>
+        </scene>
         <!--Habits-->
         <scene sceneID="Iln-Ze-RGD">
             <objects>
@@ -333,7 +348,7 @@
         <!--Habit Creation View Controller-->
         <scene sceneID="SfV-QE-enB">
             <objects>
-                <viewController storyboardIdentifier="HabitsCreationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OCs-dc-oy2" customClass="HabitCreationViewController" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HabitsCreationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OCs-dc-oy2" customClass="HabitCreationViewController" customModule="Habitude" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6zy-Fo-ZTA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -469,7 +484,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10c-LK-7I1" customClass="FHIdeasButton" customModule="Fitness" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10c-LK-7I1" customClass="FHIdeasButton" customModule="Habitude" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="106.5" width="374" height="40"/>
                                     <color key="backgroundColor" name="DMBlack"/>
                                     <constraints>
@@ -577,7 +592,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J8N-hd-fiD">
                                     <rect key="frame" x="0.0" y="41" width="374" height="32"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz3-qI-jfm" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz3-qI-jfm" customClass="FHDayButton" customModule="Habitude" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="46.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -592,7 +607,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="habitDaySelected" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvN-cK-bY3" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AvN-cK-bY3" customClass="FHDayButton" customModule="Habitude" customModuleProvider="target">
                                             <rect key="frame" x="54.5" y="0.0" width="46.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -606,7 +621,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="habitDayIsOn" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4h4-hy-HiM" userLabel="Wed" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4h4-hy-HiM" userLabel="Wed" customClass="FHDayButton" customModule="Habitude" customModuleProvider="target">
                                             <rect key="frame" x="109" y="0.0" width="46.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -620,7 +635,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="habitDayIsOn" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-5p-fiR" userLabel="Thur" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNu-5p-fiR" userLabel="Thur" customClass="FHDayButton" customModule="Habitude" customModuleProvider="target">
                                             <rect key="frame" x="163.5" y="0.0" width="47" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -634,7 +649,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="habitDayIsOn" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1d-w6-Opz" userLabel="Fri" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1d-w6-Opz" userLabel="Fri" customClass="FHDayButton" customModule="Habitude" customModuleProvider="target">
                                             <rect key="frame" x="218.5" y="0.0" width="46.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -648,7 +663,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="habitDayIsOn" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu8-pz-3Jg" userLabel="Sat" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu8-pz-3Jg" userLabel="Sat" customClass="FHDayButton" customModule="Habitude" customModuleProvider="target">
                                             <rect key="frame" x="273" y="0.0" width="46.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -662,7 +677,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="habitDayIsOn" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iML-ka-BI0" userLabel="Sun" customClass="FHDayButton" customModule="Fitness" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iML-ka-BI0" userLabel="Sun" customClass="FHDayButton" customModule="Habitude" customModuleProvider="target">
                                             <rect key="frame" x="327.5" y="0.0" width="46.5" height="32"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -733,7 +748,7 @@
                     <viewLayoutGuide key="safeArea" id="j4D-bp-F9R"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="4662" y="2048"/>
+            <point key="canvasLocation" x="4662" y="1067"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="voL-X3-Znn">
@@ -754,7 +769,7 @@
         <!--Habits-->
         <scene sceneID="fri-jM-es4">
             <objects>
-                <tableViewController storyboardIdentifier="HabitsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tdQ-IZ-b0s" customClass="HabitsViewContoller" customModule="Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HabitsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tdQ-IZ-b0s" customClass="HabitsViewContoller" customModule="Habitude" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iy3-9Y-lPA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -783,6 +798,10 @@
             <point key="canvasLocation" x="4663.125" y="313.73239436619718"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JtU-rm-xAO"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Habits" width="30" height="30"/>
         <namedColor name="DMBlack">
@@ -792,8 +811,4 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="JtU-rm-xAO"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

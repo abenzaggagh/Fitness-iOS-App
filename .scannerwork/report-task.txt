@@ -1,0 +1,6 @@
+projectKey=Fitness
+serverUrl=http://localhost:9000
+serverVersion=8.0.0.29455
+dashboardUrl=http://localhost:9000/dashboard?id=Fitness
+ceTaskId=AXDjbO1F3FCM5NH8j9rH
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXDjbO1F3FCM5NH8j9rH

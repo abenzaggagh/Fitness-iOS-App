@@ -71,7 +71,7 @@ class HabitDetailsViewController: UIViewController {
             habitCreationDateLabel.text = "Since \(format(date: habit.startDate!))"
             
             switch habit.goalPeriod! {
-            case "Daily":
+            case "Daily":                
                 
                 habitLongestStreak.text = "\(habit.longestStreak) days"
                 habitCurrentStreak.text = "\(habit.currentStreak) days"
